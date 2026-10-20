@@ -878,6 +878,16 @@
       gap: 22px;
       width: max-content;
       animation: cinta-desliza var(--dur, 120s) linear infinite;
+      translate: var(--arrastre, 0px) 0;
+      cursor: grab;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .cinta.arrastrando {
+      animation-play-state: paused;
+      cursor: grabbing;
     }
 
     .cinta.invertida { animation-direction: reverse; }
@@ -954,26 +964,74 @@
     /* ---------- Responsive ---------- */
 
     @media (max-width: 680px) {
-      .nav { flex-direction: column; gap: 10px; }
+      .nav { flex-direction: column; gap: 8px; padding: 12px 16px; }
+      .nav-marca { font-size: 1.5rem; }
       .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
-      .hero { align-items: flex-end; justify-content: flex-end; padding: 140px 22px 60px; }
+      .nav-links a { font-size: 0.9rem; padding: 6px 4px; }
+
+      .hero {
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 150px 20px 48px;
+        min-height: 92vh;
+        min-height: 92dvh;
+      }
+      .hero-contenido { max-width: 100%; }
+      .hero-titulo { font-size: clamp(2.8rem, 13vw, 4rem); }
+      .hero-lazo { width: min(280px, 68vw); margin-bottom: 16px; }
+      .hero-inscripciones { font-size: clamp(1.5rem, 6vw, 2rem); }
+      .hero-lugar { font-size: 0.78rem; letter-spacing: 0.1em; }
       .hero-fondo::after {
         background: linear-gradient(to top,
-          rgba(253, 251, 247, 0.92) 0%,
-          rgba(253, 251, 247, 0.66) 40%,
-          rgba(253, 251, 247, 0) 72%);
+          rgba(253, 251, 247, 0.94) 0%,
+          rgba(253, 251, 247, 0.72) 42%,
+          rgba(253, 251, 247, 0) 74%);
       }
       .hero-hoja { display: none; }
+
+      .seccion { padding: 40px 18px 30px; }
+      .seccion-titulo { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+      .seccion p.intro { font-size: 1rem; }
+
       .bloque-foto {
         grid-template-columns: 1fr;
-        gap: 26px;
-        margin-top: 56px;
+        gap: 22px;
+        margin-top: 48px;
       }
       .bloque-foto.invertido .foto-marco,
       .bloque-foto.invertido .bloque-texto { order: 0; }
-      .proyecto { grid-template-columns: 1fr; gap: 28px; }
+      .bloque-texto h3 { font-size: 1.8rem; }
+
+      .proyecto { grid-template-columns: 1fr; gap: 24px; margin-top: 26px; }
       .proyecto-texto { min-height: 0; }
-      .whatsapp-flotante { bottom: 16px; right: 16px; width: 52px; height: 52px; }
+      .proyecto-titulo { font-size: clamp(1.8rem, 8vw, 2.3rem); }
+
+      .testimonios-grid,
+      .datos-grid { gap: 18px; margin-top: 28px; padding: 0 18px; }
+
+      .contacto-acciones { margin-top: 26px; gap: 12px; }
+      .btn-acuarela { font-size: 1.4rem; padding: 12px 28px; }
+
+      .mapa-marco { margin-top: 32px; }
+
+      .cinta { gap: 14px; }
+      .cinta-foto {
+        width: 190px;
+        padding: 7px 7px 18px;
+        transform: none;
+      }
+      .cinta-foto .foto-pie { font-size: 1rem; }
+
+      footer { padding: 30px 18px 40px; }
+      .whatsapp-flotante { bottom: 16px; right: 16px; width: 54px; height: 54px; }
+      .whatsapp-flotante svg { width: 30px; height: 30px; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-titulo { font-size: clamp(2.4rem, 14vw, 3.2rem); }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 0.84rem; }
+      .cinta-foto { width: 165px; }
     }
 
     /* ---------- Movimiento reducido ---------- */
@@ -1034,7 +1092,7 @@
 
       .cinta { animation: none; }
 
-      .hoja-volando { display: none; }
+      .hoja-volando { animation-duration: calc(var(--dur, 14s) * 1.6); }
     }
   </style>
 
@@ -1532,6 +1590,50 @@
       cinta.querySelectorAll('.cinta-foto').forEach((f, i) => {
         if (i < piesFotos.length) f.removeAttribute('aria-hidden');
       });
+
+      /* Arrastre con el dedo (pointer events) */
+      let arrastre = 0;
+      let inicioX = 0;
+      let activo = false;
+      let anchoMitad = 0;
+
+      const medir = () => { anchoMitad = cinta.scrollWidth / 2; };
+      medir();
+      window.addEventListener('resize', medir, { passive: true });
+
+      const normalizar = () => {
+        if (!anchoMitad) return;
+        while (arrastre <= -anchoMitad) arrastre += anchoMitad;
+        while (arrastre > 0) arrastre -= anchoMitad;
+      };
+
+      cinta.addEventListener('pointerdown', (e) => {
+        activo = true;
+        inicioX = e.clientX;
+        cinta.classList.add('arrastrando');
+        cinta.setPointerCapture(e.pointerId);
+      });
+
+      cinta.addEventListener('pointermove', (e) => {
+        if (!activo) return;
+        arrastre = arrastre + (e.clientX - inicioX);
+        inicioX = e.clientX;
+        normalizar();
+        cinta.style.setProperty('--arrastre', arrastre + 'px');
+      });
+
+      const soltar = (e) => {
+        if (!activo) return;
+        activo = false;
+        cinta.classList.remove('arrastrando');
+        if (e.pointerId !== undefined && cinta.hasPointerCapture(e.pointerId)) {
+          cinta.releasePointerCapture(e.pointerId);
+        }
+      };
+
+      cinta.addEventListener('pointerup', soltar);
+      cinta.addEventListener('pointercancel', soltar);
+      cinta.addEventListener('dragstart', (e) => e.preventDefault());
     }
 
     /* ---------- Hojas que caen por los bordes ---------- */
@@ -1546,7 +1648,11 @@
 
     function sembrarHojas() {
       if (!contHojas) return;
-      const cantidad = 5;
+      const chico = window.matchMedia('(max-width: 680px)').matches;
+      const cantidad = chico ? 4 : 5;
+      const tamBase = chico ? 16 : 20;
+      const tamRango = chico ? 12 : 16;
+
       for (let i = 0; i < cantidad; i++) {
         const contenedor = document.createElement('div');
         contenedor.innerHTML = hojaSVG(paletaHojas[i % paletaHojas.length]);
@@ -1555,7 +1661,7 @@
         const desde = i % 2 === 0 ? (3 + Math.random() * 11) : (86 + Math.random() * 11);
 
         hoja.style.left = desde.toFixed(1) + '%';
-        hoja.style.setProperty('--tam', (20 + Math.random() * 16).toFixed(0) + 'px');
+        hoja.style.setProperty('--tam', (tamBase + Math.random() * tamRango).toFixed(0) + 'px');
         hoja.style.setProperty('--dur', (22 + Math.random() * 12).toFixed(1) + 's');
         hoja.style.setProperty('--retraso', (i * 5 + Math.random() * 5).toFixed(1) + 's');
         hoja.style.setProperty('--deriva', ((Math.random() * 2 - 1) * 70).toFixed(0) + 'px');
