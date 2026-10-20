@@ -1368,9 +1368,9 @@
       <div class="proyecto">
         <div class="proyecto-foto foto-marco reveal">
           <div class="foto" id="proyecto-foto-caja">
-            <img id="proyecto-img" src="images/webp/ajedrez.webp" alt="Proyecto del jardín">
+            <img id="proyecto-img" src="images/webp/huerta-cosecha.webp" alt="Proyecto del jardín">
           </div>
-          <span class="foto-pie" id="proyecto-pie">Foto: huerta</span>
+          <span class="foto-pie" id="proyecto-pie">Foto: huerta y cosecha</span>
         </div>
 
         <div class="proyecto-texto reveal" id="proyecto-texto">
@@ -1379,8 +1379,8 @@
             <path id="proyecto-trazo" d="M4 14 C30 8 46 18 72 13 C98 8 114 17 140 12 C156 9 168 13 180 11" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round"/>
             <path class="hoja" d="M166 17 C169 13 173 8 178 4 C181 11 177 16 166 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
           </svg>
-          <p class="proyecto-desc" id="proyecto-desc">Junto con las familias del jardín cuidamos la huerta y después cocinamos lo que cosechamos.</p>
-          <span class="proyecto-contador" id="proyecto-contador">1 / 8</span>
+          <p class="proyecto-desc" id="proyecto-desc">Sembramos, cuidamos y cosechamos entre todos. La huerta enseña paciencia, trabajo compartido y el valor de lo que crece.</p>
+          <span class="proyecto-contador" id="proyecto-contador">1 / 11</span>
         </div>
       </div>
 
@@ -1563,9 +1563,10 @@
 
     /* ---------- Proyectos (navegación por fotos) ---------- */
     const proyectos = [
+      { titulo: 'Huerta', desc: 'Sembramos, cuidamos y cosechamos entre todos. La huerta enseña paciencia, trabajo compartido y el valor de lo que crece.', pie: 'Foto: huerta y cosecha', img: 'images/webp/huerta-cosecha.webp' },
+      { titulo: 'Horno de barro', desc: 'Construimos el horno con barro y entre todos amasamos el pan que compartimos al sol.', pie: 'Foto: horno de barro', img: 'images/webp/horno.webp' },
       { titulo: 'Ajedrez', desc: 'Un tablero grande al aire libre para pensar, esperar el turno y jugar entre todos.', pie: 'Foto: ajedrez', img: 'images/webp/ajedrez.webp' },
       { titulo: 'Ciencias', desc: 'Observamos, probamos y nos hacemos preguntas sobre el mundo que nos rodea.', pie: 'Foto: ciencias', img: 'images/webp/ciencias.webp' },
-      { titulo: 'Horno de barro', desc: 'Construimos el horno con barro y entre todos amasamos el pan que compartimos al sol.', pie: 'Foto: horno de barro', img: 'images/webp/horno.webp' },
       { titulo: 'Lectura', desc: 'Cuentos, poemas e historias que abren la imaginación y acompañan la calma.', pie: 'Foto: lectura', img: 'images/webp/lectura.webp' },
       { titulo: 'Monte', desc: 'Recorremos el monte de las Sierras Chicas y aprendemos a reconocer sus árboles, aromas y bichos.', pie: 'Foto: monte', img: 'images/webp/monte.webp' },
       { titulo: 'Música', desc: 'Cantamos rondas, tocamos instrumentos sencillos y acompañamos el ritmo del día.', pie: 'Foto: música', img: 'images/webp/musica.webp' },
@@ -1664,7 +1665,14 @@
       { img: 'images/webp/lectura-1.webp', pie: 'Cuentos compartidos' },
       { img: 'images/webp/sala-1.webp', pie: 'Un rincón del jardín' },
       { img: 'images/webp/lectura-2.webp', pie: 'Tiempo de leer' },
-      { img: 'images/webp/sala-2.webp', pie: 'El espacio de actividades' }
+      { img: 'images/webp/sala-2.webp', pie: 'El espacio de actividades' },
+      { img: 'images/webp/huerta.webp', pie: 'La huerta del jardín' },
+      { img: 'images/webp/huerta-cosecha.webp', pie: 'Día de cosecha' },
+      { img: 'images/webp/cocina-huerta.webp', pie: 'Cocinando lo cosechado' },
+      { img: 'images/webp/cocina-huerta-1.webp', pie: 'Manos a la masa' },
+      { img: 'images/webp/cocina-huerta-2.webp', pie: 'Recetas compartidas' },
+      { img: 'images/webp/cocina-huerta-3.webp', pie: 'Entre todos en la cocina' },
+      { img: 'images/webp/escribiendo-ronda.webp', pie: 'Escribiendo en ronda' }
     ];
 
     const cinta = document.getElementById('cinta');
