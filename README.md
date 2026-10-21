@@ -10,7 +10,7 @@ Static HTML/CSS/JS, sin build. El contenido editable se guarda en `content/site.
 
 ## Panel de administración
 
-El panel utiliza **Decap CMS** con Netlify Identity y Git Gateway. Static CMS, indicado en un borrador anterior del plan, está archivado y sin mantenimiento; Decap es el proyecto actualmente mantenido para este flujo.
+El acceso propio del jardín está en `/admin/`: muestra una pantalla sencilla, inicia sesión con Netlify Identity y permite elegir qué contenido editar. El editor de contenidos usa **Decap CMS** con Git Gateway; Static CMS, indicado en un borrador anterior del plan, está archivado y sin mantenimiento.
 
 Una vez conectado el repositorio con Netlify:
 
@@ -19,8 +19,8 @@ Una vez conectado el repositorio con Netlify:
 3. Habilitar **Git Gateway** en los servicios de Identity.
 4. Esperar a que Netlify publique la versión que contiene `admin/`, y abrir `https://jpmjardin.netlify.app/admin/`.
 
-Desde **Portada** se editan los textos de la portada, bloques con fotos, proyectos, textos de Familias, contacto/inscripciones, galería, pie y referencias. Las listas permiten agregar, borrar y reordenar elementos; las fotos se suben al repositorio en `images/uploads/` y se optimizan a WebP. Desde **Información institucional** se editan los títulos, listas y textos largos de `Jardín-informacion.md`; esa misma fuente se muestra en `informacion.html`.
+En `/admin/` aparece el panel propio del jardín. Ingresá con tu cuenta invitada y elegí **Editar la portada** o **Editar información**; cada acceso abre directamente ese contenido en el editor. Netlify Identity se usa solo para verificar la cuenta y Git Gateway para guardar los cambios: la pantalla `/admin/` no lleva al dashboard de Netlify. En el editor se pueden actualizar textos de portada, bloques con fotos, proyectos, Familias, contacto/inscripciones, galería, pie y referencias. Las listas permiten agregar, borrar y reordenar elementos; las fotos se suben al repositorio en `images/uploads/` y se optimizan a WebP. La colección **Información institucional** permite editar los títulos, listas y textos largos de `Jardín-informacion.md`; esa misma fuente se muestra en `informacion.html`.
 
 Los cambios se guardan como commits en `main` y Netlify vuelve a publicar el sitio. Al eliminar una foto de una lista se quita su referencia del contenido; el archivo de imagen ya guardado en el repositorio puede borrarse por separado desde la biblioteca multimedia si ya no se usa. No habilitar el registro público de cuentas.
 
-Para probar localmente el sitio y su contenido editable, ejecutar `python -m http.server 8000` desde la carpeta del proyecto y abrir `http://localhost:8000/`. La autenticación y guardado del panel requieren la configuración de Netlify descrita arriba.
+Para previsualizar localmente el sitio y la pantalla personalizada del panel, ejecutar `python -m http.server 8000` desde la carpeta del proyecto y abrir `http://localhost:8000/` o `http://localhost:8000/admin/`. El acceso real, la autenticación y el guardado requieren la configuración de Netlify descrita arriba y publicar los cambios.
