@@ -1,0 +1,155 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: es
+site_url: https://jpmjardin.netlify.app
+display_url: https://jpmjardin.netlify.app
+
+media_folder: images/uploads
+public_folder: /images/uploads
+media_processing:
+  enabled: true
+  format:
+    enabled: true
+    default: webp
+  quality: 82
+  strip_metadata: true
+  width: 1800
+  height: null
+
+collections:
+  - name: sitio
+    label: Contenido del sitio
+    files:
+      - name: portada
+        label: Portada
+        file: content/site.json
+        format: json
+        fields:
+          - label: Encabezado y navegación
+            name: textos
+            widget: object
+            fields:
+              - { label: Título SEO, name: seoTitulo, widget: string }
+              - { label: Descripción SEO, name: seoDescripcion, widget: text }
+              - { label: Nombre del jardín, name: nombre, widget: string }
+              - { label: Nombre corto del menú, name: marca, widget: string }
+              - { label: Subtítulo del menú, name: marcaSubtitulo, widget: string }
+              - { label: Enlace Inicio, name: navInicio, widget: string }
+              - { label: Enlace El jardín, name: navJardin, widget: string }
+              - { label: Enlace Proyectos, name: navProyectos, widget: string }
+              - { label: Enlace Familias, name: navFamilias, widget: string }
+              - { label: Enlace Información, name: navInformacion, widget: string }
+              - { label: Enlace Inscripciones, name: navInscripciones, widget: string }
+              - { label: Título de la sección El jardín, name: jardinTitulo, widget: string }
+              - { label: Título de la sección Proyectos, name: proyectosTitulo, widget: string }
+              - { label: Título de la sección Familias, name: familiasTitulo, widget: string }
+              - { label: Título de la sección Contacto, name: contactoTitulo, widget: string }
+              - { label: Título de la galería, name: galeriaTitulo, widget: string }
+              - { label: Texto del botón Cómo llegar, name: botonMapa, widget: string }
+              - { label: Texto del botón de WhatsApp, name: botonWhatsapp, widget: string }
+              - { label: Etiqueta de la dirección, name: etiquetaDireccion, widget: string }
+              - { label: Etiqueta del WhatsApp, name: etiquetaWhatsapp, widget: string }
+              - { label: Etiqueta del horario, name: etiquetaHorario, widget: string }
+              - { label: Texto de referencia a la directora, name: etiquetaResponsable, widget: string }
+              - { label: Texto de consultas e inscripciones, name: textoInscripciones, widget: string }
+              - { label: Descripción accesible del mapa, name: tituloMapa, widget: string }
+          - label: Inicio
+            name: inicio
+            widget: object
+            fields:
+              - { label: Título principal, name: titulo, widget: string }
+              - { label: Lema, name: lema, widget: string }
+              - { label: Ubicación breve, name: ubicacion, widget: string }
+              - { label: Foto de portada, name: foto, widget: image }
+              - { label: Descripción de la foto, name: fotoAlt, widget: string }
+          - label: El jardín — bloques principales
+            name: jardin
+            widget: object
+            fields:
+              - { label: Introducción, name: introduccion, widget: text }
+              - label: Bloques con foto y texto
+                name: bloques
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: Título, name: titulo, widget: string }
+                  - { label: Texto, name: texto, widget: text }
+                  - { label: Foto, name: foto, widget: image }
+                  - { label: Descripción de la foto, name: fotoAlt, widget: string }
+                  - { label: Pie de foto, name: pie, widget: string }
+          - label: Proyectos
+            name: proyectos
+            widget: object
+            fields:
+              - { label: Introducción, name: introduccion, widget: text }
+              - label: Lista de proyectos
+                name: items
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: Título del proyecto, name: titulo, widget: string }
+                  - { label: Descripción, name: desc, widget: text }
+                  - { label: Foto principal, name: img, widget: image, required: false }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+                  - { label: Pie de foto, name: pie, widget: string }
+          - label: Familias
+            name: familias
+            widget: object
+            fields:
+              - { label: Introducción, name: introduccion, widget: text }
+              - label: Textos visibles
+                name: items
+                widget: list
+                summary: "{{fields.texto}}"
+                fields:
+                  - { label: Texto, name: texto, widget: text }
+                  - { label: Firma (opcional), name: firma, widget: string, required: false }
+          - label: Contacto e inscripciones
+            name: contacto
+            widget: object
+            fields:
+              - { label: Introducción, name: introduccion, widget: text }
+              - { label: Calle y altura, name: direccion, widget: string }
+              - { label: Barrio / paraje, name: barrio, widget: string }
+              - { label: Localidad y provincia, name: localidad, widget: string }
+              - { label: Referencia de distancia, name: distancia, widget: string }
+              - { label: Nombre de quien recibe consultas, name: responsable, widget: string }
+              - { label: WhatsApp con código de país (solo números), name: whatsappNumero, widget: string, pattern: ['^[0-9]{10,15}$', 'Ingresá el número con código de país, sin + ni espacios'] }
+              - { label: WhatsApp para mostrar, name: whatsappTexto, widget: string }
+              - { label: Horario de atención, name: horario, widget: string }
+              - { label: URL del mapa para insertar, name: mapaInsertar, widget: string }
+              - { label: URL del mapa para abrir, name: mapaEnlace, widget: string }
+          - label: Carrusel de fotos
+            name: galeria
+            widget: list
+            summary: "{{fields.pie}}"
+            fields:
+              - { label: Foto, name: img, widget: image }
+              - { label: Descripción de la foto, name: alt, widget: string }
+              - { label: Pie de foto, name: pie, widget: string }
+          - label: Pie de página
+            name: pie
+            widget: object
+            fields:
+              - { label: Texto institucional, name: institucion, widget: string }
+              - { label: Lema, name: lema, widget: string }
+          - label: Artículos y referencias
+            name: referencias
+            widget: object
+            fields:
+              - { label: Título de sección, name: titulo, widget: string }
+              - label: Enlaces
+                name: items
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: Título, name: titulo, widget: string }
+                  - { label: URL, name: url, widget: string }
+                  - { label: Descripción de la fuente, name: fuente, widget: string }
+      - name: informacion_institucional
+        label: Información institucional
+        file: Jardín-informacion.md
+        fields:
+          - { label: Contenido completo (títulos, textos y listas), name: body, widget: markdown }

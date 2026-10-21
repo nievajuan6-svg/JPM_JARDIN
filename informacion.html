@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Información institucional del Jardín de Infantes Juana Paula Manso: identidad, propuesta pedagógica, proyectos y equipo.">
+  <meta name="theme-color" content="#FDFBF7">
+  <title>Información institucional · Jardín Juana Paula Manso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #2D5A27;
+      --verde-suave: #8FBC8F;
+      --terracota: #C86D51;
+      --mostaza: #E0A93B;
+      --papel: #FDFBF7;
+      --texto: #333333;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--papel);
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--verde); }
+
+    a:focus-visible {
+      outline: 3px solid var(--mostaza);
+      outline-offset: 3px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--verde);
+      font-family: 'Caveat', cursive;
+      line-height: 1.15;
+    }
+
+    .salto {
+      position: absolute;
+      top: -60px;
+      left: 12px;
+      z-index: 5;
+      padding: 8px 14px;
+      border-radius: 0 0 12px 12px;
+      color: #fff;
+      background: var(--verde);
+    }
+
+    .salto:focus { top: 0; }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      background-color: rgba(253, 251, 247, 0.62);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      transition: background-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    header.scrolled {
+      background-color: rgba(253, 251, 247, 0.92);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 rgba(45, 90, 39, 0.08), 0 6px 18px rgba(45, 90, 39, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 18px 24px;
+    }
+
+    .nav-marca {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: var(--verde);
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .marca-linea {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .marca-hoja {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+    }
+
+    .nav-marca > span:not(.marca-linea) {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--verde);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 4px 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--mostaza);
+      color: var(--terracota);
+    }
+
+    .nav-links .nav-admin a,
+    .nav-links .nav-salir button {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(200, 109, 81, 0.28);
+      border-bottom-color: rgba(200, 109, 81, 0.28);
+      border-radius: 12px 19px 14px 17px;
+      color: var(--terracota);
+      background: rgba(224, 169, 59, 0.12);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(75, 55, 35, 0.06);
+      transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .nav-links .nav-admin a:hover,
+    .nav-links .nav-salir button:hover {
+      border-color: rgba(45, 90, 39, 0.35);
+      border-bottom-color: rgba(45, 90, 39, 0.35);
+      color: #fff;
+      background-color: var(--verde);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(45, 90, 39, 0.16);
+    }
+
+    main {
+      width: min(100% - 36px, 920px);
+      margin: 0 auto;
+      padding: calc(var(--header-height, 80px) + 50px) 0 72px;
+    }
+
+    .encabezado {
+      margin-bottom: 28px;
+      padding: 38px clamp(22px, 5vw, 54px);
+      border-radius: 34px 18px 30px 20px;
+      background: linear-gradient(135deg, #f4efe4, #fbf8ef 55%, #edf2e9);
+      text-align: center;
+    }
+
+    .encabezado h1 { font-size: clamp(2.7rem, 7vw, 4rem); }
+
+    .encabezado p {
+      margin: 8px 0 0;
+      color: var(--terracota);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .datos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .dato {
+      padding: 16px 20px;
+      border-left: 4px solid var(--verde-suave);
+      border-radius: 8px 18px 18px 8px;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(45, 90, 39, 0.06);
+    }
+
+    .dato strong {
+      display: block;
+      color: var(--verde);
+    }
+
+    .seccion {
+      margin: 18px 0;
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid rgba(45, 90, 39, 0.1);
+      border-radius: 26px 16px 24px 18px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 8px 24px rgba(45, 90, 39, 0.045);
+      scroll-margin-top: 95px;
+    }
+
+    .seccion h2 {
+      margin-bottom: 14px;
+      font-size: clamp(2rem, 5vw, 2.7rem);
+    }
+
+    .seccion h3 {
+      margin: 24px 0 6px;
+      color: var(--terracota);
+      font-size: 1.75rem;
+    }
+
+    .seccion h4 {
+      margin: 16px 0 4px;
+      color: var(--verde);
+    }
+
+    .seccion p { margin: 8px 0 14px; }
+
+    .seccion ul {
+      display: grid;
+      gap: 8px;
+      padding-left: 1.3rem;
+    }
+
+    .seccion li::marker { color: var(--terracota); }
+
+    .indice {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .indice a {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid rgba(45, 90, 39, 0.18);
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .indice a:hover {
+      border-color: var(--mostaza);
+      color: var(--terracota);
+    }
+
+    .contacto {
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: 22px;
+      background: #f5f1e8;
+      text-align: center;
+    }
+
+    .contacto a {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--verde);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 26px 18px;
+      color: var(--verde);
+      background: #f0eee6;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    footer p { margin: 4px; }
+
+    @media (max-width: 680px) {
+      .nav { flex-direction: column; gap: 8px; padding: 12px 16px; }
+      .nav-marca { font-size: 1.5rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+      .nav-links a { font-size: 0.9rem; padding: 6px 4px; }
+      .datos { grid-template-columns: 1fr; }
+      main { width: min(100% - 24px, 920px); }
+      .encabezado { padding: 30px 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body data-page="info">
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav-marca" href="index.html#inicio">
+        <span class="marca-linea">
+          <svg class="marca-hoja" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M32 56 C32 40 18 34 10 12 C34 14 46 26 44 42 C43 50 38 54 32 56 Z" fill="#8FBC8F" stroke="#2D5A27" stroke-width="3"/>
+            <path d="M32 56 C33 40 40 30 52 22" stroke="#2D5A27" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span data-site-text="textos.marca">J.P. Manso</span>
+        </span>
+        <span data-site-text="textos.marcaSubtitulo">Jardín de Infantes</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#inicio" data-site-text="textos.navInicio">Inicio</a></li>
+        <li><a href="index.html#jardin" data-site-text="textos.navJardin">El jardín</a></li>
+        <li><a href="index.html#proyectos" data-site-text="textos.navProyectos">Proyectos</a></li>
+        <li><a href="index.html#testimonios" data-site-text="textos.navFamilias">Familias</a></li>
+        <li><a href="informacion.html" data-site-text="textos.navInformacion">Información</a></li>
+        <li><a href="index.html#contacto" data-site-text="textos.navInscripciones">Inscripciones</a></li>
+        <li class="nav-admin"><a href="/admin/" aria-label="Ingresar al panel de administración" title="Panel de administración">Ingresar</a></li>
+        <li class="nav-salir" hidden><button type="button" data-identity-logout>Salir</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <div id="contenido-institucional">
+    <div class="encabezado">
+      <h1>Información institucional</h1>
+      <p>Sembramos palabras, cosechamos aprendizajes</p>
+    </div>
+
+    <div class="datos" aria-label="Datos institucionales">
+      <div class="dato"><strong>Ubicación</strong>Rosario Vera Peñaloza s/n, Las Ensenadas, a 10 minutos de Unquillo</div>
+      <div class="dato"><strong>Nivel y salas</strong>Educación Inicial · Salas múltiples de 3 y 4 años, y de 4 y 5 años</div>
+      <div class="dato"><strong>Horario de atención</strong>De 9 a 12 · Consultas e inscripciones por WhatsApp</div>
+      <div class="dato"><strong>WhatsApp de la directora</strong><a href="https://wa.me/5493516506866">María del Pilar Ruiz · +54 9 3516 50-6866</a></div>
+    </div>
+
+    <ul class="indice" aria-label="Índice de contenidos">
+      <li><a href="#identidad">Identidad</a></li>
+      <li><a href="#propuesta">Propuesta pedagógica</a></li>
+      <li><a href="#experiencias">Proyectos</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#comunidad">Comunidad</a></li>
+    </ul>
+
+    <section class="seccion" id="bienvenida">
+      <h2>Bienvenidos a nuestra comunidad educativa</h2>
+      <p>El Jardín de Infantes Juana Paula Manso es una institución educativa que acompaña a niños y niñas en una etapa fundamental de sus vidas: la primera infancia.</p>
+      <p>Desde una mirada integral, reconocemos a cada niño y niña como sujeto de derecho, protagonista de sus aprendizajes y capaz de construir conocimientos a través del juego, la exploración, la curiosidad, la creatividad y los vínculos con los demás.</p>
+      <p>Nuestra propuesta educativa busca ofrecer experiencias significativas en un ambiente de afecto, respeto, confianza y cuidado, promoviendo el desarrollo de todas sus potencialidades.</p>
+      <p>Creemos en una educación construida colectivamente, en la que las familias, los docentes y la comunidad cumplen un papel fundamental.</p>
+    </section>
+
+    <section class="seccion" id="identidad">
+      <h2>Nuestra identidad institucional</h2>
+      <p>El Jardín de Infantes Juana Paula Manso fue creado el 28 de noviembre de 1989 y forma parte de la comunidad educativa de Unquillo, Córdoba.</p>
+      <p>La institución acompaña las trayectorias educativas de niños y niñas en las salas múltiples de 3 y 4 años, y de 4 y 5 años, ofreciendo propuestas pedagógicas acordes con sus necesidades, intereses y posibilidades.</p>
+      <p>Nuestra identidad se construye cotidianamente a través del compromiso con las infancias, el trabajo colaborativo, el respeto por la diversidad y el vínculo con la comunidad.</p>
+
+      <h3>Nuestra misión</h3>
+      <p>Brindar una educación inicial integral, inclusiva y de calidad que garantice el derecho a aprender, jugar, expresarse y participar, respetando los tiempos, las particularidades y las potencialidades de cada niño y niña.</p>
+
+      <h3>Nuestra visión</h3>
+      <p>Consolidarnos como una comunidad educativa abierta, participativa y comprometida con las infancias, que construya aprendizajes significativos y fortalezca los vínculos entre la institución, las familias y la comunidad.</p>
+
+      <h3>Nuestros objetivos</h3>
+      <ul>
+        <li>Promover el desarrollo integral de niños y niñas en sus dimensiones afectiva, social, corporal, cognitiva, comunicativa y expresiva.</li>
+        <li>Favorecer la construcción progresiva de la autonomía, la confianza y la identidad.</li>
+        <li>Garantizar experiencias de aprendizaje a través del juego, la exploración, la indagación y la creatividad.</li>
+        <li>Enriquecer el lenguaje oral, la escucha, la literatura y las primeras aproximaciones a la lectura y la escritura.</li>
+        <li>Promover la convivencia, el respeto por la diversidad, la solidaridad y la resolución pacífica de conflictos.</li>
+        <li>Desarrollar propuestas vinculadas con el ambiente natural, social y cultural.</li>
+        <li>Fortalecer la educación ambiental, el cuidado de la naturaleza y la participación responsable en la comunidad.</li>
+        <li>Construir vínculos de confianza y cooperación con las familias.</li>
+        <li>Promover el trabajo colaborativo y la formación permanente de los equipos educativos.</li>
+      </ul>
+    </section>
+
+    <section class="seccion" id="propuesta">
+      <h2>Nuestra propuesta pedagógica</h2>
+      <p>La enseñanza en el Nivel Inicial se construye a partir de experiencias que invitan a jugar, explorar, preguntar, imaginar, crear y compartir.</p>
+      <p>El juego ocupa un lugar central como derecho de las infancias y como una forma privilegiada de aprender. A través de propuestas diversas, buscamos despertar la curiosidad, favorecer la expresión y acompañar la construcción de nuevos conocimientos.</p>
+      <p>Promovemos experiencias vinculadas con la alfabetización inicial, la literatura, las matemáticas, las ciencias, el arte, la expresión corporal, la música y el conocimiento del ambiente.</p>
+      <p>Cada propuesta busca recuperar los saberes previos de los niños y las niñas, respetar sus particularidades y ofrecer oportunidades para aprender con otros.</p>
+    </section>
+
+    <section class="seccion" id="experiencias">
+      <h2>Propuestas que enriquecen nuestras experiencias</h2>
+
+      <h3>Educación Física</h3>
+      <p>Contamos con propuestas de Educación Física a cargo de una profesora especializada, quien acompaña a los niños y las niñas en el conocimiento y cuidado de su cuerpo.</p>
+      <p>A través de juegos, circuitos, desplazamientos, exploraciones y actividades corporales, se favorece el desarrollo de la coordinación, el equilibrio, la orientación espacial, la expresión corporal y el disfrute del movimiento.</p>
+      <p>La Educación Física también ofrece oportunidades para aprender a compartir espacios, respetar turnos, acordar reglas y participar con otros.</p>
+
+      <h3>Ajedrez</h3>
+      <p>El ajedrez se presenta como una experiencia lúdica y educativa que invita a pensar, observar, anticipar y tomar decisiones.</p>
+      <p>En el Nivel Inicial, se aborda de manera gradual y significativa, mediante juegos, recorridos, desafíos y situaciones que permiten acercarse a sus piezas, movimientos y reglas.</p>
+      <p>Esta propuesta favorece la concentración, la memoria, el pensamiento estratégico.</p>
+
+      <h3>Programación y robótica</h3>
+      <p>Las propuestas de programación y robótica acercan a los niños y las niñas a formas iniciales de pensamiento computacional.</p>
+      <p>Mediante juegos de secuencias, recorridos, instrucciones, desafíos con objetos y dispositivos, los estudiantes aprenden a ordenar acciones, anticipar resultados, detectar errores y buscar nuevas soluciones.</p>
+      <p>Se aborda como una oportunidad para crear, experimentar y trabajar colaborativamente, sin perder de vista el carácter lúdico y exploratorio propio de la educación inicial.</p>
+
+      <h3>Cultura digital</h3>
+      <p>Promovemos una cultura digital que permita a los niños y las niñas acercarse a las tecnologías como herramientas para aprender, expresarse, comunicarse y crear.</p>
+      <p>Acompañamos este proceso desde una mirada crítica, responsable y cuidada, favoreciendo el reconocimiento de normas de uso, el respeto por los demás, la protección de la privacidad y la participación segura en entornos digitales.</p>
+
+      <h3>El Bosque de las Poesías</h3>
+      <p>Un espacio de encuentro con la palabra, la imaginación y la naturaleza, donde la poesía cobra vida y nos invita a descubrir nuevas formas de expresión.</p>
+
+      <h3>Proyecto de Huerta</h3>
+      <p>Una propuesta para aprender a cuidar la tierra, conocer los ciclos de la naturaleza y valorar la alimentación saludable, promoviendo el respeto por el ambiente y el trabajo colaborativo.</p>
+
+      <h3>Arte y creatividad</h3>
+      <p>Experiencias que favorecen la expresión, la sensibilidad y la imaginación a través de diferentes lenguajes artísticos, creando, explorando y compartiendo con otros.</p>
+
+      <h3>Meteorología y cuidado del ambiente</h3>
+      <p>Aprendemos a observar el tiempo, conocer los fenómenos naturales y desarrollar actitudes de prevención y cuidado, construyendo saberes que nos ayudan a comprender nuestro entorno.</p>
+    </section>
+
+    <section class="seccion" id="estudiantes">
+      <h2>El perfil de nuestros estudiantes</h2>
+      <p>Acompañamos a niños y niñas para que puedan:</p>
+      <ul>
+        <li>Desarrollar progresivamente su autonomía y confianza.</li>
+        <li>Expresar ideas, emociones, sentimientos y necesidades.</li>
+        <li>Participar en experiencias de juego y aprendizaje compartido.</li>
+        <li>Construir vínculos basados en el respeto, la empatía y la solidaridad.</li>
+        <li>Explorar el ambiente, formular preguntas y buscar respuestas.</li>
+        <li>Desarrollar la imaginación, la creatividad y el pensamiento.</li>
+        <li>Disfrutar de la literatura, el arte, la música y diversas formas de expresión.</li>
+        <li>Reconocer la importancia del cuidado de sí mismos, de los demás y del ambiente.</li>
+        <li>Construir actitudes de participación, cooperación y respeto por la diversidad.</li>
+      </ul>
+      <p>Entendemos estos aprendizajes como procesos progresivos que se desarrollan respetando los tiempos y las características de cada niño y niña.</p>
+    </section>
+
+    <section class="seccion" id="equipo">
+      <h2>Gestión y equipo docente</h2>
+      <h3>Directora: Lic. Prof. María del Pilar Ruiz</h3>
+      <h4>Formación académica</h4>
+      <p>Licenciada en Ciencias de la Educación. Licenciada en Educación Inicial. Especialista en Gestión Directiva. Profesora de Nivel Inicial.</p>
+      <h4>Trayectoria profesional</h4>
+      <p>Cuenta con una trayectoria profesional que abarca 20 años de experiencia en conducción de instituciones de educación maternal de gestión privada y 19 de gestión pública, en el Nivel Inicial, 10 años de experiencia en gestión directiva y 10 años en formación docente en el Nivel Superior.</p>
+      <p>Actualmente, desarrolla una propuesta de capacitación docente en Lengua y Literatura y Alfabetización Inicial, en el marco de la Universidad Popular de Unquillo.</p>
+
+      <h3>Lic. Prof. María Inés Avaca</h3>
+      <h4>Formación académica</h4>
+      <p>Licenciada en Nivel Inicial, profesora de Nivel Inicial.</p>
+      <h4>Trayectoria profesional</h4>
+      <p>Experiencia de 6 años en Nivel Inicial.</p>
+
+      <h3>Ivana Laura Reynoso</h3>
+      <p>Antigüedad: 9 años en Nivel Inicial.</p>
+      <p>Profesora de Educación Física.</p>
+      <p>Las docentes acompañan cotidianamente los procesos de aprendizaje y desarrollo de los niños y las niñas, diseñando propuestas pedagógicas que promueven el juego, la exploración, la creatividad y la construcción de conocimientos. Su tarea se sustenta en el compromiso con las infancias, la planificación, la observación, la evaluación de los aprendizajes y el trabajo colaborativo con las familias y el equipo institucional.</p>
+
+      <h3>Distribución de salas y propuestas</h3>
+      <p>Sala múltiple de 3 y 4 años: María Inés Avaca.<br>
+      Sala múltiple de 4 y 5 años: María del Pilar Ruiz.<br>
+      Educación Física: Ivana Laura Reynoso.</p>
+    </section>
+
+    <section class="seccion" id="comunidad">
+      <h2>Nuestro personal auxiliar</h2>
+      <p>El personal auxiliar cumple una función fundamental en el cuidado de los espacios institucionales, contribuyendo a mantener ambientes limpios, ordenados y adecuados para el bienestar de toda la comunidad educativa.</p>
+      <p>Valoramos su dedicación y su aporte cotidiano a la construcción de un entorno seguro y acogedor para las infancias.</p>
+      <p>Auxiliar de limpieza: Mercedes López.</p>
+
+      <h2>Nuestro servicio de PAICOR</h2>
+      <p>El servicio de PAICOR acompaña a la comunidad educativa mediante la prestación alimentaria, contribuyendo al bienestar de los niños y las niñas durante su jornada escolar.</p>
+      <p>Reconocemos la importancia de las tareas de quienes participan en este servicio y valoramos su compromiso cotidiano con la atención y el cuidado de las infancias.</p>
+      <p>Integrantes del servicio: Milagros Abigail Hofstatter.</p>
+
+      <h2>Las familias: parte fundamental de nuestra comunidad</h2>
+      <p>Consideramos a las familias como protagonistas fundamentales de la trayectoria educativa de cada niño y niña.</p>
+      <p>Promovemos el diálogo, la escucha, la participación y la construcción de acuerdos que permitan acompañar de manera conjunta los procesos de aprendizaje y desarrollo.</p>
+      <p>Creemos que la confianza entre las familias y el jardín fortalece los vínculos y genera mejores oportunidades educativas.</p>
+
+      <h2>Nuestro compromiso con la comunidad</h2>
+      <p>El jardín es parte de una comunidad con historia, saberes, experiencias y valores que enriquecen la tarea educativa.</p>
+      <p>Impulsamos proyectos que favorecen el encuentro, la participación y el compromiso con el entorno natural, social y cultural, promoviendo el cuidado del ambiente y el aprendizaje compartido.</p>
+      <p>Cada experiencia comunitaria nos invita a enseñar y aprender con otros, fortaleciendo el sentido de pertenencia y la identidad institucional.</p>
+    </section>
+
+    <section class="seccion">
+      <h2>Un jardín que crece con sus infancias</h2>
+      <p>Cada niño y cada niña tiene una manera única de mirar el mundo, descubrirlo y aprender.</p>
+      <p>Nuestro compromiso es acompañar ese recorrido con respeto, sensibilidad y responsabilidad, ofreciendo oportunidades para que puedan jugar, imaginar, preguntar, crear y crecer junto a otros.</p>
+    </section>
+
+    <div class="contacto">
+      <strong>Jardín de Infantes Juana Paula Manso · Las Ensenadas, Unquillo</strong><br>
+      <a href="index.html#contacto">Contacto e información</a>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+    <p data-site-text="textos.nombre">Jardín de Infantes Juana Paula Manso</p>
+    <p id="info-direccion">Rosario Vera Peñaloza s/n · Las Ensenadas · Unquillo, Córdoba</p>
+    <p><a id="info-whatsapp" href="https://wa.me/5493516506866">WhatsApp: +54 9 3516 50-6866</a> · <a href="index.html">Volver a la portada</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script src="content-loader.js"></script>
+  <script src="site-nav.js"></script>
+</body>
+</html>

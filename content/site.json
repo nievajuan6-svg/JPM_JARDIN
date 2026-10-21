@@ -1,0 +1,206 @@
+{
+  "textos": {
+    "seoTitulo": "Jardín Juana Paula Manso · Las Ensenadas, Unquillo",
+    "seoDescripcion": "Jardín Juana Paula Manso, en Las Ensenadas, Unquillo, Córdoba. Educación Inicial, salas múltiples de 3 y 4 años, y de 4 y 5 años. Sembramos palabras, cosechamos aprendizajes.",
+    "nombre": "Jardín Juana Paula Manso",
+    "marca": "J.P. Manso",
+    "marcaSubtitulo": "Jardín de Infantes",
+    "navInicio": "Inicio",
+    "navJardin": "El jardín",
+    "navProyectos": "Proyectos",
+    "navFamilias": "Familias",
+    "navInformacion": "Información",
+    "navInscripciones": "Inscripciones",
+    "jardinTitulo": "El jardín",
+    "proyectosTitulo": "Proyectos",
+    "familiasTitulo": "Familias",
+    "contactoTitulo": "Contacto",
+    "galeriaTitulo": "Más fotos",
+    "botonMapa": "Cómo llegar",
+    "botonWhatsapp": "Consultar por WhatsApp",
+    "etiquetaDireccion": "Dirección",
+    "etiquetaWhatsapp": "WhatsApp",
+    "etiquetaHorario": "Horario de atención",
+    "etiquetaResponsable": "Contacto de la directora,",
+    "textoInscripciones": "Consultas e inscripciones por WhatsApp",
+    "tituloMapa": "Mapa de ubicación del Jardín Juana Paula Manso"
+  },
+  "inicio": {
+    "titulo": "Jardín Juana Paula Manso",
+    "lema": "Sembramos palabras, cosechamos aprendizajes",
+    "ubicacion": "Las Ensenadas · Unquillo · Córdoba",
+    "foto": "images/webp/hero.webp",
+    "fotoAlt": "El patio del jardín entre los árboles de Las Ensenadas"
+  },
+  "jardin": {
+    "introduccion": "Una institución educativa que acompaña a niños y niñas durante la primera infancia.",
+    "bloques": [
+      {
+        "titulo": "El juego y la exploración",
+        "texto": "El juego ocupa un lugar central como derecho de las infancias y como una forma privilegiada de aprender.",
+        "foto": "images/webp/monte-1.webp",
+        "fotoAlt": "El monte en Las Ensenadas",
+        "pie": "Foto: el monte y el patio"
+      },
+      {
+        "titulo": "Aprender con otros",
+        "texto": "Las propuestas invitan a jugar, explorar, preguntar, imaginar, crear y compartir, recuperando los saberes previos de cada niño y niña.",
+        "foto": "images/webp/musica-2.webp",
+        "fotoAlt": "Ronda de música y canciones",
+        "pie": "Foto: ronda, cuentos y canciones"
+      },
+      {
+        "titulo": "Desarrollo integral",
+        "texto": "Acompañamos el desarrollo afectivo, social, corporal, cognitivo, comunicativo y expresivo, respetando los tiempos y las particularidades de cada niño y niña.",
+        "foto": "images/webp/sala-5.webp",
+        "fotoAlt": "Los chicos participando en el jardín",
+        "pie": "Foto: los chicos en actividad"
+      },
+      {
+        "titulo": "Comunidad y familias",
+        "texto": "Promovemos el diálogo, la escucha, la participación y la construcción de acuerdos con las familias.",
+        "foto": "images/webp/sala.webp",
+        "fotoAlt": "Familias y comunidad del jardín",
+        "pie": "Foto: familias y comunidad"
+      }
+    ]
+  },
+  "proyectos": {
+    "introduccion": "Propuestas que enriquecen nuestras experiencias de aprendizaje.",
+    "items": [
+      {
+        "titulo": "Proyecto de Huerta",
+        "desc": "Una propuesta para aprender a cuidar la tierra, conocer los ciclos de la naturaleza y valorar la alimentación saludable, promoviendo el respeto por el ambiente y el trabajo colaborativo.",
+        "img": "images/webp/huerta-cosecha.webp",
+        "alt": "Huerta y cosecha del jardín",
+        "pie": "Foto: huerta y cosecha"
+      },
+      {
+        "titulo": "Educación Física",
+        "desc": "Contamos con propuestas de Educación Física a cargo de una profesora especializada, quien acompaña a los niños y las niñas en el conocimiento y cuidado de su cuerpo.",
+        "img": "images/webp/sala-5.webp",
+        "alt": "Actividades del jardín",
+        "pie": "Foto: actividades del jardín"
+      },
+      {
+        "titulo": "Ajedrez",
+        "desc": "El ajedrez se presenta como una experiencia lúdica y educativa que invita a pensar, observar, anticipar y tomar decisiones.",
+        "img": "images/webp/ajedrez.webp",
+        "alt": "Ajedrez en el jardín",
+        "pie": "Foto: ajedrez"
+      },
+      {
+        "titulo": "Programación y robótica",
+        "desc": "Las propuestas de programación y robótica acercan a los niños y las niñas a formas iniciales de pensamiento computacional.",
+        "img": "images/webp/ciencias.webp",
+        "alt": "Exploración y aprendizaje",
+        "pie": "Foto: exploración y aprendizaje"
+      },
+      {
+        "titulo": "Cultura digital",
+        "desc": "Promovemos una cultura digital que permita a los niños y las niñas acercarse a las tecnologías como herramientas para aprender, expresarse, comunicarse y crear.",
+        "img": "",
+        "alt": "",
+        "pie": "Cultura digital"
+      },
+      {
+        "titulo": "El Bosque de las Poesías",
+        "desc": "Un espacio de encuentro con la palabra, la imaginación y la naturaleza, donde la poesía cobra vida y nos invita a descubrir nuevas formas de expresión.",
+        "img": "images/webp/lectura.webp",
+        "alt": "Lectura y poesía",
+        "pie": "Foto: lectura y poesía"
+      },
+      {
+        "titulo": "Arte y creatividad",
+        "desc": "Experiencias que favorecen la expresión, la sensibilidad y la imaginación a través de diferentes lenguajes artísticos, creando, explorando y compartiendo con otros.",
+        "img": "images/webp/musica.webp",
+        "alt": "Expresión artística",
+        "pie": "Foto: expresión artística"
+      },
+      {
+        "titulo": "Meteorología y cuidado del ambiente",
+        "desc": "Aprendemos a observar el tiempo, conocer los fenómenos naturales y desarrollar actitudes de prevención y cuidado, construyendo saberes que nos ayudan a comprender nuestro entorno.",
+        "img": "images/webp/ciencias.webp",
+        "alt": "Exploración del ambiente",
+        "pie": "Foto: exploración del ambiente"
+      }
+    ]
+  },
+  "familias": {
+    "introduccion": "Las familias son parte fundamental de nuestra comunidad educativa.",
+    "items": [
+      {
+        "texto": "Consideramos a las familias como protagonistas fundamentales de la trayectoria educativa de cada niño y niña.",
+        "firma": ""
+      },
+      {
+        "texto": "Promovemos el diálogo, la escucha, la participación y la construcción de acuerdos que permitan acompañar de manera conjunta los procesos de aprendizaje y desarrollo.",
+        "firma": ""
+      },
+      {
+        "texto": "Creemos que la confianza entre las familias y el jardín fortalece los vínculos y genera mejores oportunidades educativas.",
+        "firma": ""
+      }
+    ]
+  },
+  "contacto": {
+    "introduccion": "Para consultas e inscripciones, escribinos por WhatsApp. Horario de atención: de 9 a 12.",
+    "direccion": "Rosario Vera Peñaloza s/n",
+    "barrio": "Las Ensenadas",
+    "localidad": "Unquillo, Córdoba",
+    "distancia": "A 10 minutos de Unquillo",
+    "responsable": "María del Pilar Ruiz",
+    "whatsappNumero": "5493516506866",
+    "whatsappTexto": "+54 9 3516 50-6866",
+    "horario": "De 9 a 12",
+    "mapaInsertar": "https://www.google.com/maps?q=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba&hl=es&z=17&output=embed",
+    "mapaEnlace": "https://www.google.com/maps/search/?api=1&query=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba"
+  },
+  "galeria": [
+    { "img": "images/webp/pared.webp", "alt": "Murales y paredes del jardín", "pie": "Murales y paredes del jardín" },
+    { "img": "images/webp/pared-1.webp", "alt": "Un rincón pintado", "pie": "Un rincón pintado" },
+    { "img": "images/webp/juguetes.webp", "alt": "Juguetes y materiales", "pie": "Juguetes y materiales" },
+    { "img": "images/webp/pared-2.webp", "alt": "Colores en la pared", "pie": "Colores en la pared" },
+    { "img": "images/webp/utiles.webp", "alt": "Útiles y herramientas", "pie": "Útiles y herramientas" },
+    { "img": "images/webp/pared-3.webp", "alt": "Detalles del espacio", "pie": "Detalles del espacio" },
+    { "img": "images/webp/ajedrez-1.webp", "alt": "Tablero y piezas", "pie": "Tablero y piezas" },
+    { "img": "images/webp/pared-4.webp", "alt": "Arte en las paredes", "pie": "Arte en las paredes" },
+    { "img": "images/webp/ciencias-1.webp", "alt": "Explorando materiales", "pie": "Explorando materiales" },
+    { "img": "images/webp/pared-5.webp", "alt": "Texturas del jardín", "pie": "Texturas del jardín" },
+    { "img": "images/webp/ajedrez-2.webp", "alt": "Partida al aire libre", "pie": "Partida al aire libre" },
+    { "img": "images/webp/pared-6.webp", "alt": "Un mundo de color", "pie": "Un mundo de color" },
+    { "img": "images/webp/ajedrez-3.webp", "alt": "El tablero del patio", "pie": "El tablero del patio" },
+    { "img": "images/webp/monte-2.webp", "alt": "Caminando el monte", "pie": "Caminando el monte" },
+    { "img": "images/webp/ajedrez-4.webp", "alt": "Jugando entre todos", "pie": "Jugando entre todos" },
+    { "img": "images/webp/monte-3.webp", "alt": "Bajo los árboles", "pie": "Bajo los árboles" },
+    { "img": "images/webp/musica.webp", "alt": "Canciones y ritmo", "pie": "Canciones y ritmo" },
+    { "img": "images/webp/monte-4.webp", "alt": "Senderos de la sierra", "pie": "Senderos de la sierra" },
+    { "img": "images/webp/musica-3.webp", "alt": "Instrumentos sencillos", "pie": "Instrumentos sencillos" },
+    { "img": "images/webp/monte-5.webp", "alt": "Descubriendo el paisaje", "pie": "Descubriendo el paisaje" },
+    { "img": "images/webp/lectura-1.webp", "alt": "Cuentos compartidos", "pie": "Cuentos compartidos" },
+    { "img": "images/webp/sala-1.webp", "alt": "Un rincón del jardín", "pie": "Un rincón del jardín" },
+    { "img": "images/webp/lectura-2.webp", "alt": "Tiempo de leer", "pie": "Tiempo de leer" },
+    { "img": "images/webp/sala-2.webp", "alt": "El espacio de actividades", "pie": "El espacio de actividades" },
+    { "img": "images/webp/huerta.webp", "alt": "La huerta del jardín", "pie": "La huerta del jardín" },
+    { "img": "images/webp/huerta-cosecha.webp", "alt": "Día de cosecha", "pie": "Día de cosecha" },
+    { "img": "images/webp/cocina-huerta.webp", "alt": "Cocinando lo cosechado", "pie": "Cocinando lo cosechado" },
+    { "img": "images/webp/cocina-huerta-1.webp", "alt": "Manos a la masa", "pie": "Manos a la masa" },
+    { "img": "images/webp/cocina-huerta-2.webp", "alt": "Recetas compartidas", "pie": "Recetas compartidas" },
+    { "img": "images/webp/cocina-huerta-3.webp", "alt": "Entre todos en la cocina", "pie": "Entre todos en la cocina" },
+    { "img": "images/webp/escribiendo-ronda.webp", "alt": "Escribiendo en ronda", "pie": "Escribiendo en ronda" }
+  ],
+  "pie": {
+    "institucion": "Jardín rural · Las Ensenadas, Unquillo, Córdoba",
+    "lema": "Sembramos palabras, cosechamos aprendizajes"
+  },
+  "referencias": {
+    "titulo": "Artículos y referencias",
+    "items": [
+      {
+        "titulo": "Jardín Juana Paula Manso",
+        "url": "https://ifts1.com.ar/institucion-educativa/jardin-juana-paula-manso/",
+        "fuente": "Instituciones Educativas en Argentina (IFTS1)"
+      }
+    ]
+  }
+}

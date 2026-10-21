@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jardín de infantes estatal y rural en el barrio Cabana, Unquillo, Córdoba, dependiente de la Municipalidad de Unquillo. Educación inicial en la naturaleza, juego libre, arte y ritmos que respetan la infancia.">
+  <meta name="description" content="Jardín de Infantes Juana Paula Manso, en Las Ensenadas, Unquillo, Córdoba. Educación Inicial, salas múltiples de 3 y 4 años, y de 4 y 5 años. Sembramos palabras, cosechamos aprendizajes.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FDFBF7">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>Jardín Juana Paula Manso — Educación en la Naturaleza · Unquillo, Córdoba</title>
+  <title>Jardín Juana Paula Manso · Las Ensenadas, Unquillo</title>
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:url" content="https://jpmjardin.netlify.app/">
   <meta property="og:site_name" content="Jardín Juana Paula Manso">
-  <meta property="og:title" content="Jardín Juana Paula Manso — Educación en la Naturaleza en Unquillo">
-  <meta property="og:description" content="Jardín de infantes estatal y rural en el barrio Cabana, Unquillo, dependiente de la Municipalidad de Unquillo. Educación inicial en contacto con la naturaleza.">
+  <meta property="og:title" content="Jardín Juana Paula Manso · Las Ensenadas, Unquillo">
+  <meta property="og:description" content="Educación Inicial en Las Ensenadas, Unquillo, Córdoba. Salas múltiples de 3 y 4 años, y de 4 y 5 años.">
   <meta property="og:image" content="https://jpmjardin.netlify.app/og-jardin.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="El patio del jardín entre los árboles de Las Ensenadas">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Jardín Juana Paula Manso — Educación en la Naturaleza en Unquillo">
-  <meta name="twitter:description" content="Jardín de infantes estatal y rural en el barrio Cabana, Unquillo, dependiente de la Municipalidad de Unquillo.">
+  <meta name="twitter:title" content="Jardín Juana Paula Manso · Las Ensenadas, Unquillo">
+  <meta name="twitter:description" content="Educación Inicial en Las Ensenadas, Unquillo, Córdoba. Salas múltiples de 3 y 4 años, y de 4 y 5 años.">
   <meta name="twitter:image" content="https://jpmjardin.netlify.app/og-jardin.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <script>document.documentElement.classList.add('js');</script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
     :root {
@@ -161,7 +162,7 @@
       flex: 0 0 auto;
     }
 
-    .nav-marca span {
+    .nav-marca > span:not(.marca-linea) {
       display: block;
       font-family: 'Nunito', sans-serif;
       font-size: 0.68rem;
@@ -191,6 +192,33 @@
     .nav-links a:hover {
       border-bottom-color: var(--color-mostaza);
       color: var(--color-terracota);
+    }
+
+    .nav-links .nav-admin a,
+    .nav-links .nav-salir button {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(200, 109, 81, 0.28);
+      border-bottom-color: rgba(200, 109, 81, 0.28);
+      border-radius: 12px 19px 14px 17px;
+      color: var(--color-terracota);
+      background: rgba(224, 169, 59, 0.12);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(75, 55, 35, 0.06);
+      transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .nav-links .nav-admin a:hover,
+    .nav-links .nav-salir button:hover {
+      border-color: rgba(45, 90, 39, 0.35);
+      border-bottom-color: rgba(45, 90, 39, 0.35);
+      color: #fff;
+      background-color: var(--color-verde-bosque);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(45, 90, 39, 0.16);
     }
 
     /* ---------- Hero ---------- */
@@ -1180,21 +1208,15 @@
     "@context": "https://schema.org",
     "@type": "Preschool",
     "name": "Jardín Juana Paula Manso",
-    "description": "Jardín de infantes estatal y rural, dependiente de la Municipalidad de Unquillo. Educación inicial en contacto con la naturaleza, en el barrio Cabana, Unquillo, Córdoba.",
+    "description": "Jardín rural de Educación Inicial en Las Ensenadas, Unquillo, Córdoba. Salas múltiples de 3 y 4 años, y de 4 y 5 años.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Rosario Vera Peñaloza, Las Ensenadas S/N",
+      "streetAddress": "Rosario Vera Peñaloza s/n, Las Ensenadas",
       "addressLocality": "Unquillo",
       "addressRegion": "Córdoba",
       "addressCountry": "AR"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -31.2333,
-      "longitude": -64.3167
-    },
-    "telephone": "+543543487963",
-    "openingHours": "Mo-Fr 08:00-16:30",
+    "telephone": "+5493516506866",
     "hasMap": "https://www.google.com/maps/search/?api=1&query=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba"
   }
   </script>
@@ -1205,7 +1227,7 @@
   <div class="hojas-cayendo" id="hojas-cayendo" aria-hidden="true"></div>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <a href="https://wa.me/543543487963?text=Hola!%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20inscripciones%20del%20Jard%C3%ADn%20Juana%20Paula%20Manso."
+  <a href="https://wa.me/5493516506866?text=Hola!%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20el%20Jard%C3%ADn%20Juana%20Paula%20Manso."
      class="whatsapp-flotante"
      target="_blank"
      rel="noopener"
@@ -1236,16 +1258,19 @@
             <path d="M32 56 C32 40 18 34 10 12 C34 14 46 26 44 42 C43 50 38 54 32 56 Z" fill="#8FBC8F" stroke="#2D5A27" stroke-width="3"/>
             <path d="M32 56 C33 40 40 30 52 22" stroke="#2D5A27" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          J.P. Manso
+          <span data-site-text="textos.marca">J.P. Manso</span>
         </span>
-        <span>Jardín de Infantes</span>
+        <span data-site-text="textos.marcaSubtitulo">Jardín de Infantes</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#jardin">El jardín</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#testimonios">Familias</a></li>
-        <li><a href="#contacto">Inscripciones</a></li>
+        <li><a href="#inicio" data-site-text="textos.navInicio">Inicio</a></li>
+        <li><a href="#jardin" data-site-text="textos.navJardin">El jardín</a></li>
+        <li><a href="#proyectos" data-site-text="textos.navProyectos">Proyectos</a></li>
+        <li><a href="#testimonios" data-site-text="textos.navFamilias">Familias</a></li>
+        <li><a href="informacion.html" data-site-text="textos.navInformacion">Información</a></li>
+        <li><a href="#contacto" data-site-text="textos.navInscripciones">Inscripciones</a></li>
+        <li class="nav-admin"><a href="/admin/" aria-label="Ingresar al panel de administración" title="Panel de administración">Ingresar</a></li>
+        <li class="nav-salir" hidden><button type="button" data-identity-logout>Salir</button></li>
       </ul>
     </nav>
   </header>
@@ -1253,7 +1278,7 @@
   <main id="contenido">
     <section class="hero" id="inicio">
       <div class="hero-fondo">
-        <img src="images/webp/hero.webp" alt="El patio del jardín entre los árboles de Las Ensenadas">
+        <img src="images/webp/hero.webp" alt="El patio del jardín entre los árboles de Las Ensenadas" data-site-image="inicio.foto" data-site-alt="inicio.fotoAlt">
       </div>
       <svg class="hero-hoja hero-hoja-izq" viewBox="0 0 64 64" fill="none" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
         <path d="M32 56 C32 40 18 34 10 12 C34 14 46 26 44 42 C43 50 38 54 32 56 Z"/>
@@ -1265,14 +1290,14 @@
       </svg>
 
       <div class="hero-contenido reveal">
-        <h1 class="hero-titulo">Jardín Juana Paula Manso</h1>
+        <h1 class="hero-titulo" data-site-text="inicio.titulo">Jardín Juana Paula Manso</h1>
         <svg class="hero-lazo" id="hero-lazo" viewBox="0 0 360 34" fill="none" aria-hidden="true">
           <path class="trazo-lazo" d="M6 22 C60 12 108 28 162 18 C216 8 268 26 322 16 C332 14 340 17 350 20" stroke="#E0A93B" stroke-width="4" stroke-linecap="round"/>
           <path class="hoja" d="M330 26 C334 21 340 15 348 10 C352 19 346 27 330 28 Z" stroke="#2D5A27" stroke-width="1.8"/>
           <path class="hoja" d="M330 26 C334 21 341 15 348 10" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round" fill="none"/>
         </svg>
-        <p class="hero-inscripciones">¡Inscripciones abiertas!</p>
-        <p class="hero-lugar">Barrio Cabana · Unquillo · Sierras Chicas</p>
+        <p class="hero-inscripciones" data-site-text="inicio.lema">Sembramos palabras, cosechamos aprendizajes</p>
+        <p class="hero-lugar" data-site-text="inicio.ubicacion">Las Ensenadas · Unquillo · Córdoba</p>
       </div>
     </section>
 
@@ -1286,14 +1311,15 @@
     </div>
 
     <section class="seccion" id="jardin" style="max-width: 1120px;">
-      <h2 class="seccion-titulo reveal">El jardín</h2>
+      <h2 class="seccion-titulo reveal" data-site-text="textos.jardinTitulo">El jardín</h2>
       <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
         <path d="M4 15 C20 9 30 18 46 14 C62 10 72 18 88 13 C100 9 110 14 118 12" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round"/>
         <path d="M122 17 C125 13 129 8 132 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
         <path class="hoja" d="M122 17 C122 11 125 7 132 3 C134 10 130 16 122 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
       </svg>
-      <p class="intro reveal">Una escuela rural y estatal que respeta la infancia: naturaleza, ritmo, juego libre y arte.</p>
+      <p class="intro reveal" data-site-text="jardin.introduccion">Una institución educativa que acompaña a niños y niñas durante la primera infancia.</p>
 
+      <div id="bloques-jardin">
       <div class="bloque-foto">
         <div class="foto-marco reveal">
           <div class="foto">
@@ -1302,8 +1328,8 @@
           <span class="foto-pie">Foto: el monte y el patio</span>
         </div>
         <div class="bloque-texto reveal">
-          <h3>La naturaleza como aula</h3>
-          <p>El día transcurre al aire libre, entre árboles y tierra. La huerta, el barro y los frutos de cada estación son los primeros materiales de aprendizaje.</p>
+          <h3>El juego y la exploración</h3>
+          <p>El juego ocupa un lugar central como derecho de las infancias y como una forma privilegiada de aprender.</p>
         </div>
       </div>
 
@@ -1315,8 +1341,8 @@
           <span class="foto-pie">Foto: ronda, cuentos y canciones</span>
         </div>
         <div class="bloque-texto reveal">
-          <h3>Ritmo y juego libre</h3>
-          <p>Cada jornada sigue un ritmo sereno y previsible. En el juego espontáneo, los chicos eligen, prueban e inventan a su propio tiempo.</p>
+          <h3>Aprender con otros</h3>
+          <p>Las propuestas invitan a jugar, explorar, preguntar, imaginar, crear y compartir, recuperando los saberes previos de cada niño y niña.</p>
         </div>
       </div>
 
@@ -1328,8 +1354,8 @@
           <span class="foto-pie">Foto: los chicos en actividad</span>
         </div>
         <div class="bloque-texto reveal">
-          <h3>Los chicos participan</h3>
-          <p>Cada uno a su manera: unos miran, otros prueban, otros inventan. En el jardín todos tienen un lugar para hacer y ser parte.</p>
+          <h3>Desarrollo integral</h3>
+          <p>Acompañamos el desarrollo afectivo, social, corporal, cognitivo, comunicativo y expresivo, respetando los tiempos y las particularidades de cada niño y niña.</p>
         </div>
       </div>
 
@@ -1342,8 +1368,9 @@
         </div>
         <div class="bloque-texto reveal">
           <h3>Comunidad y familias</h3>
-          <p>Las familias son parte de la vida del jardín: fiestas, talleres y encuentros que hacen comunidad.</p>
+          <p>Promovemos el diálogo, la escucha, la participación y la construcción de acuerdos con las familias.</p>
         </div>
+      </div>
       </div>
     </section>
 
@@ -1357,13 +1384,13 @@
     </div>
 
     <section class="seccion" id="proyectos">
-      <h2 class="seccion-titulo reveal">Proyectos</h2>
+      <h2 class="seccion-titulo reveal" data-site-text="textos.proyectosTitulo">Proyectos</h2>
       <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
         <path d="M4 13 C18 19 32 8 46 14 C60 20 74 9 88 14 C100 18 110 12 118 13" stroke="#E0A93B" stroke-width="2.5" stroke-linecap="round"/>
         <path d="M122 17 C125 13 129 8 132 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
         <path class="hoja" d="M122 17 C122 11 125 7 132 3 C134 10 130 16 122 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
       </svg>
-      <p class="intro reveal">Algunos de los proyectos que compartimos en el jardín.</p>
+      <p class="intro reveal" data-site-text="proyectos.introduccion">Propuestas que enriquecen nuestras experiencias de aprendizaje.</p>
 
       <div class="proyecto">
         <div class="proyecto-foto foto-marco reveal">
@@ -1374,13 +1401,13 @@
         </div>
 
         <div class="proyecto-texto reveal" id="proyecto-texto">
-          <h3 class="proyecto-titulo" id="proyecto-titulo">Huerta</h3>
+          <h3 class="proyecto-titulo" id="proyecto-titulo">Proyecto de Huerta</h3>
           <svg class="proyecto-linea" viewBox="0 0 190 22" fill="none" aria-hidden="true">
             <path id="proyecto-trazo" d="M4 14 C30 8 46 18 72 13 C98 8 114 17 140 12 C156 9 168 13 180 11" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round"/>
             <path class="hoja" d="M166 17 C169 13 173 8 178 4 C181 11 177 16 166 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
           </svg>
-          <p class="proyecto-desc" id="proyecto-desc">Sembramos, cuidamos y cosechamos entre todos. La huerta enseña paciencia, trabajo compartido y el valor de lo que crece.</p>
-          <span class="proyecto-contador" id="proyecto-contador">1 / 11</span>
+          <p class="proyecto-desc" id="proyecto-desc">Una propuesta para aprender a cuidar la tierra, conocer los ciclos de la naturaleza y valorar la alimentación saludable, promoviendo el respeto por el ambiente y el trabajo colaborativo.</p>
+          <span class="proyecto-contador" id="proyecto-contador">1 / 8</span>
         </div>
       </div>
 
@@ -1400,26 +1427,23 @@
     </div>
 
     <section class="seccion" id="testimonios">
-      <h2 class="seccion-titulo reveal">Familias</h2>
+      <h2 class="seccion-titulo reveal" data-site-text="textos.familiasTitulo">Familias</h2>
       <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
         <path d="M4 14 C20 8 30 17 46 13 C62 9 72 17 88 12 C100 8 110 13 118 11" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round"/>
         <path d="M122 17 C125 13 129 8 132 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
         <path class="hoja" d="M122 17 C122 11 125 7 132 3 C134 10 130 16 122 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
       </svg>
-      <p class="intro reveal">Lo que dicen las familias que eligen el jardín cada día.</p>
+      <p class="intro reveal" data-site-text="familias.introduccion">Las familias son parte fundamental de nuestra comunidad educativa.</p>
 
-      <div class="testimonios-grid">
+      <div class="testimonios-grid" id="testimonios-lista">
         <div class="testimonio-card reveal">
-          <p>Un jardín humano y cercano. Mi hijo vuelve feliz de haber jugado entre los árboles, con barro en las manos y una sonrisa enorme.</p>
-          <span class="testimonio-autor">— Mamá de sala de 4</span>
+          <p>Consideramos a las familias como protagonistas fundamentales de la trayectoria educativa de cada niño y niña.</p>
         </div>
         <div class="testimonio-card reveal">
-          <p>Buscábamos un lugar donde se respetara el tiempo de nuestra hija. Acá la infancia se vive sin apuro, con canciones, cuentos y naturaleza.</p>
-          <span class="testimonio-autor">— Familia de Las Ensenadas</span>
+          <p>Promovemos el diálogo, la escucha, la participación y la construcción de acuerdos que permitan acompañar de manera conjunta los procesos de aprendizaje y desarrollo.</p>
         </div>
         <div class="testimonio-card reveal">
-          <p>La calidez del equipo y la comunidad que se arma alrededor del jardín hacen toda la diferencia. Nos sentimos parte.</p>
-          <span class="testimonio-autor">— Papá de sala de 5</span>
+          <p>Creemos que la confianza entre las familias y el jardín fortalece los vínculos y genera mejores oportunidades educativas.</p>
         </div>
       </div>
     </section>
@@ -1434,13 +1458,13 @@
     </div>
 
     <section class="seccion" id="contacto" style="padding-bottom: 20px;">
-      <h2 class="seccion-titulo reveal">Inscripciones y visitas</h2>
+      <h2 class="seccion-titulo reveal" data-site-text="textos.contactoTitulo">Contacto</h2>
       <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
         <path d="M4 16 C22 10 34 19 52 14 C70 9 82 18 100 13 C110 10 116 13 120 14" stroke="#C86D51" stroke-width="2.5" stroke-linecap="round"/>
         <path d="M124 18 C127 14 130 9 133 4" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
         <path class="hoja" d="M124 18 C124 12 127 8 133 4 C135 11 131 17 124 18 Z" stroke="#2D5A27" stroke-width="1.6"/>
       </svg>
-      <p class="intro reveal">¿Querés conocer el jardín? Coordinamos visitas y entrevistas durante todo el año.</p>
+      <p class="intro reveal" data-site-text="contacto.introduccion">Para consultas e inscripciones, escribinos por WhatsApp. Horario de atención: de 9 a 12.</p>
 
       <div class="datos-grid">
         <div class="card reveal">
@@ -1448,17 +1472,18 @@
             <path d="M24 43 C14 31 7 24.5 7 17 a10.5 10.5 0 0 1 21-4 a10.5 10.5 0 0 1 21 4 c0 7.5-7 14-17 26 Z"/>
             <circle cx="24" cy="17" r="4"/>
           </svg>
-          <h3>Dirección</h3>
-          <p class="dato-grande">Rosario Vera Peñaloza, Las Ensenadas S/N</p>
-          <p>Unquillo, Córdoba</p>
+          <h3 data-site-text="textos.etiquetaDireccion">Dirección</h3>
+          <p class="dato-grande" data-site-text="contacto.direccion">Rosario Vera Peñaloza s/n</p>
+          <p><span data-site-text="contacto.barrio">Las Ensenadas</span> · <span data-site-text="contacto.distancia">A 10 minutos de Unquillo</span>, <span data-site-text="contacto.localidad">Córdoba</span></p>
         </div>
 
         <div class="card reveal">
           <svg class="icono" viewBox="0 0 48 48" fill="none" stroke="#C86D51" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M41 34 v6 a4 4 0 0 1-4.4 4 A35 35 0 0 1 4 11.4 4 4 0 0 1 8 7 h6 a4 4 0 0 1 4 3.4 c0 2 .7 4 2 5.6 a4 4 0 0 1-1 4.4 L17.6 22 a28 28 0 0 0 8.4 8.4 l1.6-1.6 a4 4 0 0 1 4.4-1 c1.6 1.3 3.6 2 5.6 2 a4 4 0 0 1 3.4 4.2 Z"/>
           </svg>
-          <h3>Teléfono</h3>
-          <p class="dato-grande"><a href="tel:+543543487963">03543 48-7963</a></p>
+          <h3 data-site-text="textos.etiquetaWhatsapp">WhatsApp</h3>
+          <p class="dato-grande"><a id="contacto-whatsapp" href="https://wa.me/5493516506866?text=Hola!%20Quisiera%20consultar%20por%20el%20Jard%C3%ADn%20Juana%20Paula%20Manso." target="_blank" rel="noopener" data-site-text="contacto.whatsappTexto">+54 9 3516 50-6866</a></p>
+          <p><span data-site-text="textos.etiquetaResponsable">Contacto de la directora,</span> <span data-site-text="contacto.responsable">María del Pilar Ruiz</span></p>
         </div>
 
         <div class="card reveal">
@@ -1466,15 +1491,16 @@
             <circle cx="24" cy="24" r="17"/>
             <path d="M24 14 v11 l7 4"/>
           </svg>
-          <h3>Horario</h3>
-          <p class="estado-abierto">Abierto ahora</p>
-          <p>Cierra a las 4:30 p. m.</p>
+          <h3 data-site-text="textos.etiquetaHorario">Horario de atención</h3>
+          <p class="dato-grande" data-site-text="contacto.horario">De 9 a 12</p>
+          <p data-site-text="textos.textoInscripciones">Consultas e inscripciones por WhatsApp</p>
         </div>
       </div>
 
       <div class="mapa-marco reveal">
         <iframe
           src="https://www.google.com/maps?q=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba&hl=es&z=17&output=embed"
+          id="mapa-embed"
           title="Mapa de ubicación del Jardín Juana Paula Manso"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -1482,13 +1508,13 @@
       </div>
 
       <div class="contacto-acciones reveal">
-        <a class="btn-acuarela verde" href="https://www.google.com/maps/search/?api=1&query=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba" target="_blank" rel="noopener">Cómo llegar</a>
-        <a class="btn-acuarela" href="tel:+543543487963">Llamar</a>
+        <a class="btn-acuarela verde" id="boton-mapa" href="https://www.google.com/maps/search/?api=1&query=QM94%2BJH%20Unquillo%2C%20C%C3%B3rdoba" target="_blank" rel="noopener" data-site-text="textos.botonMapa">Cómo llegar</a>
+        <a class="btn-acuarela" id="boton-whatsapp" href="https://wa.me/5493516506866?text=Hola!%20Quisiera%20consultar%20por%20el%20Jard%C3%ADn%20Juana%20Paula%20Manso." target="_blank" rel="noopener" data-site-text="textos.botonWhatsapp">Consultar por WhatsApp</a>
       </div>
     </section>
 
     <section class="mas-fotos" id="mas-fotos" aria-labelledby="mas-fotos-titulo">
-      <h2 class="seccion-titulo reveal" id="mas-fotos-titulo">Más fotos</h2>
+      <h2 class="seccion-titulo reveal" id="mas-fotos-titulo" data-site-text="textos.galeriaTitulo">Más fotos</h2>
       <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
         <path d="M4 14 C20 8 30 17 46 13 C62 9 72 17 88 12 C100 8 110 13 118 11" stroke="#8FBC8F" stroke-width="2.5" stroke-linecap="round"/>
         <path d="M122 17 C125 13 129 8 132 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
@@ -1504,14 +1530,14 @@
       <path d="M32 56 C32 40 18 34 10 12 C34 14 46 26 44 42 C43 50 38 54 32 56 Z" fill="#8FBC8F" stroke="#2D5A27" stroke-width="3"/>
       <path d="M32 56 C33 40 40 30 52 22" stroke="#2D5A27" stroke-width="3" stroke-linecap="round"/>
     </svg>
-    <span class="nombre">Jardín Juana Paula Manso</span>
-    Jardín de infantes estatal · Barrio Cabana, Unquillo, Córdoba<br>
-    Tel: 03543 48-7963 ·     <small>Educación inicial en contacto con la naturaleza</small>
+    <span class="nombre" data-site-text="textos.nombre">Jardín Juana Paula Manso</span>
+    <span id="pie-institucional">Jardín rural · Las Ensenadas, Unquillo, Córdoba · WhatsApp: +54 9 3516 50-6866</span><br>
+    <small id="pie-lema">Sembramos palabras, cosechamos aprendizajes</small>
   </footer>
 
   <section class="referencias" aria-labelledby="referencias-titulo">
-    <h2 class="referencias-titulo reveal" id="referencias-titulo">Artículos y referencias</h2>
-    <ul class="referencias-lista">
+    <h2 class="referencias-titulo reveal" id="referencias-titulo" data-site-text="referencias.titulo">Artículos y referencias</h2>
+    <ul class="referencias-lista" id="referencias-lista">
       <li>
         <a class="referencia" href="https://ifts1.com.ar/institucion-educativa/jardin-juana-paula-manso/" target="_blank" rel="noopener">
           <span class="referencia-titulo">Jardín Juana Paula Manso <span class="referencia-flecha" aria-hidden="true">→</span></span>
@@ -1522,15 +1548,10 @@
   </section>
 
 
+  <script src="content-loader.js"></script>
+  <script src="site-nav.js"></script>
   <script>
     const cabecera = document.querySelector('header');
-
-    function moverCabecera() {
-      cabecera.classList.toggle('scrolled', window.scrollY > 30);
-    }
-
-    moverCabecera();
-    window.addEventListener('scroll', moverCabecera, { passive: true });
 
     const observador = new IntersectionObserver((entradas) => {
       entradas.forEach((entrada) => {
@@ -1562,18 +1583,15 @@
     }
 
     /* ---------- Proyectos (navegación por fotos) ---------- */
-    const proyectos = [
-      { titulo: 'Huerta', desc: 'Sembramos, cuidamos y cosechamos entre todos. La huerta enseña paciencia, trabajo compartido y el valor de lo que crece.', pie: 'Foto: huerta y cosecha', img: 'images/webp/huerta-cosecha.webp' },
-      { titulo: 'Horno de barro', desc: 'Construimos el horno con barro y entre todos amasamos el pan que compartimos al sol.', pie: 'Foto: horno de barro', img: 'images/webp/horno.webp' },
-      { titulo: 'Ajedrez', desc: 'Un tablero grande al aire libre para pensar, esperar el turno y jugar entre todos.', pie: 'Foto: ajedrez', img: 'images/webp/ajedrez.webp' },
-      { titulo: 'Ciencias', desc: 'Observamos, probamos y nos hacemos preguntas sobre el mundo que nos rodea.', pie: 'Foto: ciencias', img: 'images/webp/ciencias.webp' },
-      { titulo: 'Lectura', desc: 'Cuentos, poemas e historias que abren la imaginación y acompañan la calma.', pie: 'Foto: lectura', img: 'images/webp/lectura.webp' },
-      { titulo: 'Monte', desc: 'Recorremos el monte de las Sierras Chicas y aprendemos a reconocer sus árboles, aromas y bichos.', pie: 'Foto: monte', img: 'images/webp/monte.webp' },
-      { titulo: 'Música', desc: 'Cantamos rondas, tocamos instrumentos sencillos y acompañamos el ritmo del día.', pie: 'Foto: música', img: 'images/webp/musica.webp' },
-      { titulo: 'Teatro', desc: 'Jugamos a ser otros, inventamos escenas y ponemos el cuerpo en movimiento.', pie: 'Foto: teatro', img: '' },
-      { titulo: 'Cocina', desc: 'Preparamos recetas sencillas con lo que cosechamos y compartimos la mesa.', pie: 'Foto: cocina', img: '' },
-      { titulo: 'Reconocimiento de plantas', desc: 'Aprendemos los nombres de las plantas del lugar, sus usos y sus aromas.', pie: 'Foto: reconocimiento de plantas', img: '' },
-      { titulo: 'Gimnasia', desc: 'Movemos el cuerpo, saltamos, trepamos y jugamos con el equilibrio.', pie: 'Foto: gimnasia', img: '' }
+    let proyectos = [
+      { titulo: 'Proyecto de Huerta', desc: 'Una propuesta para aprender a cuidar la tierra, conocer los ciclos de la naturaleza y valorar la alimentación saludable, promoviendo el respeto por el ambiente y el trabajo colaborativo.', pie: 'Foto: huerta y cosecha', img: 'images/webp/huerta-cosecha.webp' },
+      { titulo: 'Educación Física', desc: 'Contamos con propuestas de Educación Física a cargo de una profesora especializada, quien acompaña a los niños y las niñas en el conocimiento y cuidado de su cuerpo.', pie: 'Foto: actividades del jardín', img: 'images/webp/sala-5.webp' },
+      { titulo: 'Ajedrez', desc: 'El ajedrez se presenta como una experiencia lúdica y educativa que invita a pensar, observar, anticipar y tomar decisiones.', pie: 'Foto: ajedrez', img: 'images/webp/ajedrez.webp' },
+      { titulo: 'Programación y robótica', desc: 'Las propuestas de programación y robótica acercan a los niños y las niñas a formas iniciales de pensamiento computacional.', pie: 'Foto: exploración y aprendizaje', img: 'images/webp/ciencias.webp' },
+      { titulo: 'Cultura digital', desc: 'Promovemos una cultura digital que permita a los niños y las niñas acercarse a las tecnologías como herramientas para aprender, expresarse, comunicarse y crear.', pie: 'Cultura digital', img: '' },
+      { titulo: 'El Bosque de las Poesías', desc: 'Un espacio de encuentro con la palabra, la imaginación y la naturaleza, donde la poesía cobra vida y nos invita a descubrir nuevas formas de expresión.', pie: 'Foto: lectura y poesía', img: 'images/webp/lectura.webp' },
+      { titulo: 'Arte y creatividad', desc: 'Experiencias que favorecen la expresión, la sensibilidad y la imaginación a través de diferentes lenguajes artísticos, creando, explorando y compartiendo con otros.', pie: 'Foto: expresión artística', img: 'images/webp/musica.webp' },
+      { titulo: 'Meteorología y cuidado del ambiente', desc: 'Aprendemos a observar el tiempo, conocer los fenómenos naturales y desarrollar actitudes de prevención y cuidado, construyendo saberes que nos ayudan a comprender nuestro entorno.', pie: 'Foto: exploración del ambiente', img: 'images/webp/ciencias.webp' }
     ];
 
     const pTitulo = document.getElementById('proyecto-titulo');
@@ -1592,7 +1610,11 @@
 
     function pintarFotoProyecto(p) {
       if (p.img) {
-        pCaja.innerHTML = '<img id="proyecto-img" src="' + p.img + '" alt="' + p.titulo + ' en el jardín">';
+        const imagen = document.createElement('img');
+        imagen.id = 'proyecto-img';
+        imagen.src = p.img;
+        imagen.alt = p.alt || p.titulo;
+        pCaja.replaceChildren(imagen);
       } else {
         pCaja.innerHTML = iconoFotoProyecto;
       }
@@ -1605,6 +1627,16 @@
     }
 
     function mostrarProyecto(indice, animar) {
+      if (proyectos.length === 0) {
+        pTitulo.textContent = 'No hay proyectos publicados';
+        pDesc.textContent = '';
+        pPie.textContent = '';
+        pContador.textContent = '';
+        pCaja.replaceChildren();
+        document.querySelectorAll('.proyecto-btn').forEach((boton) => { boton.disabled = true; });
+        return;
+      }
+      document.querySelectorAll('.proyecto-btn').forEach((boton) => { boton.disabled = false; });
       const p = proyectos[indice];
       const pintar = () => {
         pTitulo.textContent = p.titulo;
@@ -1631,17 +1663,29 @@
 
     mostrarProyecto(0, false);
 
+    window.addEventListener('jardin:proyectos', (evento) => {
+      proyectos = Array.isArray(evento.detail) ? evento.detail : [];
+      pActual = 0;
+      mostrarProyecto(0, false);
+    });
+    if (window.jardinSiteContent) {
+      proyectos = window.jardinSiteContent.proyectos.items;
+      mostrarProyecto(0, false);
+    }
+
     document.querySelector('.proyecto-btn.anterior').addEventListener('click', () => {
+      if (proyectos.length === 0) return;
       pActual = (pActual - 1 + proyectos.length) % proyectos.length;
       mostrarProyecto(pActual, true);
     });
     document.querySelector('.proyecto-btn.siguiente').addEventListener('click', () => {
+      if (proyectos.length === 0) return;
       pActual = (pActual + 1) % proyectos.length;
       mostrarProyecto(pActual, true);
     });
 
     /* ---------- Más fotos (cinta infinita) ---------- */
-    const piesFotos = [
+    let piesFotos = [
       { img: 'images/webp/pared.webp', pie: 'Murales y paredes del jardín' },
       { img: 'images/webp/pared-1.webp', pie: 'Un rincón pintado' },
       { img: 'images/webp/juguetes.webp', pie: 'Juguetes y materiales' },
@@ -1678,17 +1722,35 @@
     const cinta = document.getElementById('cinta');
 
     if (cinta) {
-      const armarFoto = (f) =>
-        '<div class="cinta-foto">' +
-          '<div class="foto"><img src="' + f.img + '" alt="' + f.pie + '" loading="lazy"></div>' +
-          '<span class="foto-pie">' + f.pie + '</span>' +
-        '</div>';
+      function dibujarCinta() {
+        const tarjetas = piesFotos.map((foto) => {
+          const tarjeta = document.createElement('div');
+          tarjeta.className = 'cinta-foto';
+          const marco = document.createElement('div');
+          marco.className = 'foto';
+          const imagen = document.createElement('img');
+          imagen.src = foto.img;
+          imagen.alt = foto.alt || foto.pie;
+          imagen.loading = 'lazy';
+          const pie = document.createElement('span');
+          pie.className = 'foto-pie';
+          pie.textContent = foto.pie;
+          marco.append(imagen);
+          tarjeta.append(marco, pie);
+          return tarjeta;
+        });
+        cinta.replaceChildren(...tarjetas, ...tarjetas.map((tarjeta) => tarjeta.cloneNode(true)));
+        cinta.querySelectorAll('.cinta-foto').forEach((foto) => foto.setAttribute('aria-hidden', 'true'));
+        cinta.querySelectorAll('.cinta-foto').forEach((foto, indice) => {
+          if (indice < piesFotos.length) foto.removeAttribute('aria-hidden');
+        });
+      }
 
-      const grupo = piesFotos.map(armarFoto).join('');
-      cinta.innerHTML = grupo + grupo;
-      cinta.querySelectorAll('.cinta-foto').forEach((f) => f.setAttribute('aria-hidden', 'true'));
-      cinta.querySelectorAll('.cinta-foto').forEach((f, i) => {
-        if (i < piesFotos.length) f.removeAttribute('aria-hidden');
+      dibujarCinta();
+      window.addEventListener('jardin:galeria', (evento) => {
+        piesFotos = Array.isArray(evento.detail) ? evento.detail : [];
+        dibujarCinta();
+        medir();
       });
 
       /* Arrastre con el dedo (pointer events) */
@@ -1700,6 +1762,11 @@
       const medir = () => { anchoMitad = cinta.scrollWidth / 2; };
       medir();
       window.addEventListener('resize', medir, { passive: true });
+      if (window.jardinSiteContent) {
+        piesFotos = window.jardinSiteContent.galeria;
+        dibujarCinta();
+        medir();
+      }
 
       const normalizar = () => {
         if (!anchoMitad) return;
