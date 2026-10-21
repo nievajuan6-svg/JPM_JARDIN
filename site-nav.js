@@ -22,9 +22,6 @@
 
   updateLogoutVisibility(identity.currentUser());
   identity.on('init', updateLogoutVisibility);
-  identity.on('login', () => {
-    window.location.assign('/admin/');
-  });
   identity.on('logout', () => updateLogoutVisibility(null));
 
   logoutButton.addEventListener('click', () => identity.logout());
