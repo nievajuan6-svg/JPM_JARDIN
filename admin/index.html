@@ -289,13 +289,13 @@
               <span class="opcion-icono" aria-hidden="true">✿</span>
               <h2>Portada</h2>
               <p>Actualizá textos, fotos, proyectos, galería, horarios y datos de contacto.</p>
-              <a class="boton boton-principal" href="editor.html#/collections/sitio/entries/portada">Editar la portada</a>
+              <a class="boton boton-principal" href="editor.html?section=portada">Editar la portada</a>
             </article>
             <article class="opcion">
               <span class="opcion-icono" aria-hidden="true">⌑</span>
               <h2>Información institucional</h2>
               <p>Editá la propuesta pedagógica, el equipo y el resto de la información del jardín.</p>
-              <a class="boton" href="editor.html#/collections/sitio/entries/informacion_institucional">Editar información</a>
+              <a class="boton" href="editor.html?section=informacion">Editar información</a>
             </article>
           </div>
           <button class="boton" id="salir" type="button" style="margin-top: 22px">Salir</button>
@@ -318,6 +318,9 @@
         conSesion.hidden = !autenticado;
         if (autenticado) {
           usuario.textContent = user.email || 'Sesión iniciada';
+          mensaje.textContent = '';
+        } else if (identidad) {
+          mensaje.textContent = 'Iniciá sesión con el correo que recibió la invitación.';
         }
       }
 
