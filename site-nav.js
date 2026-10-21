@@ -20,8 +20,9 @@
     logoutButton.closest('li').hidden = !user;
   };
 
-  updateLogoutVisibility(identity.currentUser());
+  logoutButton.closest('li').hidden = true;
   identity.on('init', updateLogoutVisibility);
+  identity.on('login', updateLogoutVisibility);
   identity.on('logout', () => updateLogoutVisibility(null));
 
   logoutButton.addEventListener('click', () => identity.logout());
