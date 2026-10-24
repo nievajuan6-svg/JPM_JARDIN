@@ -33,7 +33,7 @@
     "fotoAlt": "El patio del jardín con su huerta y sus juegos"
   },
   "jardin": {
-    "introduccion": "Una institución educativa que acompaña a niños y niñas durante la primera infancia.",
+    "introduccion": "Una institución educativa que acompaña a niños y niñas durante la primera infancia. ",
     "bloques": [
       {
         "titulo": "El juego y la exploración",
@@ -44,14 +44,14 @@
       },
       {
         "titulo": "Aprender con otros",
-        "texto": "Las propuestas invitan a jugar, explorar, preguntar, imaginar, crear y compartir, recuperando los saberes previos de cada niño y niña.",
+        "texto": "Las propuestas invitan a jugar, explorar, preguntar, escuchar al otro, imaginar, crear y compartir, recuperando los saberes previos de cada niño y niña. Cada infancia es única, Cada experiencia una oportunidad para crecer.",
         "foto": "images/webp/musica-2.webp",
         "fotoAlt": "Ronda de música y canciones",
         "pie": "Foto: ronda, cuentos y canciones"
       },
       {
         "titulo": "Desarrollo integral",
-        "texto": "Acompañamos el desarrollo afectivo, social, corporal, cognitivo, comunicativo y expresivo, respetando los tiempos y las particularidades de cada niño y niña.",
+        "texto": "Acompañamos el desarrollo integral, afectivo, social, corporal, cognitivo, comunicativo y expresivo, respetando los tiempos y las particularidades, fortaleciendo el potencial de cada niño y niña.",
         "foto": "images/webp/sala-5.webp",
         "fotoAlt": "Los chicos participando en el jardín",
         "pie": "Foto: los chicos en actividad"
