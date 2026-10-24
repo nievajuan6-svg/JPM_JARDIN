@@ -141,7 +141,7 @@ Las docentes acompañan cotidianamente los procesos de aprendizaje y desarrollo 
 
 ### Distribución de salas
 
-Sala múltiple de 3 y 4 años: María Inés Avaca\.  \\nSala múltiple de 4 y 5 años: María del Pilar Ruiz\.
+Sala múltiple de 3 y 4 años: María Inés Avaca\. Sala múltiple de 4 y 5 años: María del Pilar Ruiz\.
 
 ## Nuestro personal auxiliar
 
