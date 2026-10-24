@@ -2,11 +2,11 @@
 
 ## Datos institucionales
 
-Jardín rural  \nJuana Paula Manso  \nRosario Vera Peñaloza s/n\. Teléfono de contacto de la directora, María del Pilar Ruiz: [\+54 9 3516 50-6866](tel:+54 9 3516 50-6866)  \nBarrio Las Ensenadas, a 10 minutos de Unquillo\.  \nNivel: Educación Inicial  \nSalas múltiples: 3 y 4 años, y 4 y 5 años
+Jardín rural  \\nJuana Paula Manso  \\nRosario Vera Peñaloza s/n\. Teléfono de contacto de la directora, María del Pilar Ruiz: \[\+54 9 3516 50-6866\](tel:\+54 9 3516 50-6866)  \\nBarrio Las Ensenadas, a 10 minutos de Unquillo\.  \\nNivel: Educación Inicial  \\nSalas múltiples: 3 y 4 años, y 4 y 5 años
 
 Horario de atención: de 8:00 a 12\.:00hs\.:00 hs\. Inscripciones y consultas por WhatsApp\.
 
-**Lema institucional:**  \nSembramos palabras, cosechamos aprendizajes
+**Lema institucional:** Sembramos palabras, cosechamos aprendizajes
 
 ## Bienvenidos a nuestra comunidad educativa
 
@@ -60,19 +60,19 @@ Cada propuesta busca recuperar los saberes previos de los niños y las niñas, r
 
 ### Educación Física
 
-Contamos con propuestas de Educación Física a cargo de una profesora especializada, quien acompaña a los niños y las niñas en el conocimiento y cuidado de su cuerpo\.  \nA través de juegos, circuitos, desplazamientos, exploraciones y actividades corporales, se favorece el desarrollo de la coordinación, el equilibrio, la orientación espacial, la expresión corporal y el disfrute del movimiento\.  \nLa Educación Física también ofrece oportunidades para aprender a compartir espacios, respetar turnos, acordar reglas y participar con otros\.
+Contamos con propuestas de Educación Física a cargo de una profesora especializada, quien acompaña a los niños y las niñas en el conocimiento y cuidado de su cuerpo\.  \\nA través de juegos, circuitos, desplazamientos, exploraciones y actividades corporales, se favorece el desarrollo de la coordinación, el equilibrio, la orientación espacial, la expresión corporal y el disfrute del movimiento\.  \\nLa Educación Física también ofrece oportunidades para aprender a compartir espacios, respetar turnos, acordar reglas y participar con otros\.
 
 ### Ajedrez
 
-El ajedrez se presenta como una experiencia lúdica y educativa que invita a pensar, observar, anticipar y tomar decisiones\.  \nEn el Nivel Inicial, se aborda de manera gradual y significativa, mediante juegos, recorridos, desafíos y situaciones que permiten acercarse a sus piezas, movimientos y reglas\.  \nEsta propuesta favorece la concentración, la memoria, el pensamiento estratégico\.
+El ajedrez se presenta como una experiencia lúdica y educativa que invita a pensar, observar, anticipar y tomar decisiones\.  \\nEn el Nivel Inicial, se aborda de manera gradual y significativa, mediante juegos, recorridos, desafíos y situaciones que permiten acercarse a sus piezas, movimientos y reglas\.  \\nEsta propuesta favorece la concentración, la memoria, el pensamiento estratégico\.
 
 ### Programación y robótica
 
-Las propuestas de programación y robótica acercan a los niños y las niñas a formas iniciales de pensamiento computacional\.  \nMediante juegos de secuencias, recorridos, instrucciones, desafíos con objetos y dispositivos, los estudiantes aprenden a ordenar acciones, anticipar resultados, detectar errores y buscar nuevas soluciones\.  \nSe aborda como una oportunidad para crear, experimentar y trabajar colaborativamente, sin perder de vista el carácter lúdico y exploratorio propio de la educación inicial\.
+Las propuestas de programación y robótica acercan a los niños y las niñas a formas iniciales de pensamiento computacional\.  \\nMediante juegos de secuencias, recorridos, instrucciones, desafíos con objetos y dispositivos, los estudiantes aprenden a ordenar acciones, anticipar resultados, detectar errores y buscar nuevas soluciones\.  \\nSe aborda como una oportunidad para crear, experimentar y trabajar colaborativamente, sin perder de vista el carácter lúdico y exploratorio propio de la educación inicial\.
 
 ### Cultura digital
 
-Promovemos una cultura digital que permita a los niños y las niñas acercarse a las tecnologías como herramientas para aprender, expresarse, comunicarse y crear\.  \nAcompañamos este proceso desde una mirada crítica, responsable y cuidada, favoreciendo el reconocimiento de normas de uso, el respeto por los demás, la protección de la privacidad y la participación segura en entornos digitales\.
+Promovemos una cultura digital que permita a los niños y las niñas acercarse a las tecnologías como herramientas para aprender, expresarse, comunicarse y crear\.  \\nAcompañamos este proceso desde una mirada crítica, responsable y cuidada, favoreciendo el reconocimiento de normas de uso, el respeto por los demás, la protección de la privacidad y la participación segura en entornos digitales\.
 
 ### El Bosque de las Poesías
 
@@ -141,7 +141,7 @@ Las docentes acompañan cotidianamente los procesos de aprendizaje y desarrollo 
 
 ### Distribución de salas
 
-Sala múltiple de 3 y 4 años: María Inés Avaca\.  \nSala múltiple de 4 y 5 años: María del Pilar Ruiz\.
+Sala múltiple de 3 y 4 años: María Inés Avaca\.  \\nSala múltiple de 4 y 5 años: María del Pilar Ruiz\.
 
 ## Nuestro personal auxiliar
 
