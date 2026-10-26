@@ -64,11 +64,18 @@
         "pie": "Foto: familias y comunidad"
       },
       {
-        "titulo": "",
-        "texto": "",
-        "foto": "",
-        "fotoAlt": "",
-        "pie": ""
+        "titulo": "Bienestar.",
+        "texto": " Desarrollo de vínculos de cooperación y solidaridad en el interior y entre los distintos colectivos institucionales: docentes, estudiantes, directora, familias. \nBrindar un clima de afecto y confianza a fin de que adquieran seguridad en sus propias capacidades afectivas, motrices, sociales expresivas en relación con otros y con el conocimiento. \n",
+        "foto": "images/uploads/1793022512920-screenshot-20191127-191345-3.webp",
+        "fotoAlt": "Trabajamos desde una perspectiva de la pedagogía del cuidado que incluye la expresión de las emociones y la afectividad entendida como la construcción del vínculo de confianza entre docentes y estudiantes, de sostenimiento y de amparo propio del acto educativo.",
+        "pie": "Somos una escuela que trabaja desde un abordaje que permite el reconocimiento del conflicto y la generación de diferentes estrategias de resolución a través del diálogo, la participación y mediación. Apostando a la creación conjunta de propuestas pedagógicas que habiliten la reparación ante situaciones complejas desde una perspectiva democrática fundada en la justicia, los derechos y el reconocimiento de las diversas identidades culturales."
+      },
+      {
+        "titulo": "La comunidad educativa se compromete en el sostenimiento de los siguientes valores: el respeto, empatía, solidaridad y responsabilidad. ",
+        "texto": "Somos una institución que sostiene que los lenguajes artísticos son una oportunidad para desarrollar la creatividad, imaginación y sensibilidad, el pensamiento crítico y la capacidad de resolución de problemas, la comunicación con otros, el trabajo en equipo, el respeto por lo que se dice, siente y hace y expresa el otro, favoreciendo la construcción de su identidad y consecuentemente la convivencia. ",
+        "foto": "images/uploads/1793024397156-whatsapp-image-2026-10-26-at-11-16-22-am.webp",
+        "fotoAlt": "Como jardín deseamos que los estudiantes aprendan distintas formas de vincularse en las diferentes situaciones conflictivas, así como también incorporen los valores esenciales que le permitan vivir una vida plena llena de amor, respeto y responsabilidad hacia uno mismo y hacia los demás. ",
+        "pie": "Brindar un clima de afecto y confianza a fin de que adquieran seguridad en sus propias capacidades afectivas, motrices, sociales expresivas en relación con otros y con el conocimiento. "
       }
     ]
   },
