@@ -4,7 +4,7 @@
 
 Jardín rural  \\nJuana Paula Manso  \\nRosario Vera Peñaloza s/n\. Teléfono de contacto de la directora, María del Pilar Ruiz: \[\+54 9 3516 50-6866\](tel:\+54 9 3516 50-6866)  \\nBarrio Las Ensenadas, a 10 minutos de Unquillo\.  \\nNivel: Educación Inicial  \\nSalas múltiples: 3 y 4 años, y 4 y 5 años
 
-Horario de atención: de 8:00 a 12\.:00hs\.:00 hs\. Inscripciones y consultas por WhatsApp\.
+Horario de atención: de 8:00 a 12\.:00hs\. Inscripciones y consultas por WhatsApp\.
 
 **Lema institucional:** Sembramos palabras, cosechamos aprendizajes
 
@@ -32,6 +32,8 @@ Brindar una educación inicial integral, inclusiva y de calidad que garantice el
 
 ## Nuestra visión
 
+Desde el jardín de Infantes Juana Paula Manso deseamos trabajar juntos por una educación emancipadora para que todos, puedan ser lo que quiera ser\. Por ello, toda la comunidad educativa se compromete en el sostenimiento de los siguientes valores: el respeto, empatía, solidaridad y responsabilidad\.
+
 Consolidarnos como una comunidad educativa abierta, participativa y comprometida con las infancias, que construya aprendizajes significativos y fortalezca los vínculos entre la institución, las familias y la comunidad\.
 
 ## Nuestros objetivos
@@ -39,12 +41,14 @@ Consolidarnos como una comunidad educativa abierta, participativa y comprometida
 - Promover el desarrollo integral de niños y niñas en sus dimensiones afectiva, social, corporal, cognitiva, comunicativa y expresiva\.
 - Favorecer la construcción progresiva de la autonomía, la confianza y la identidad\.
 - Garantizar experiencias de aprendizaje a través del juego, la exploración, la indagación y la creatividad\.
-- Enriquecer el lenguaje oral, la escucha, la literatura y las primeras aproximaciones a la lectura y la escritura\.
 - Promover la convivencia, el respeto por la diversidad, la solidaridad y la resolución pacífica de conflictos\.
-- Desarrollar propuestas vinculadas con el ambiente natural, social y cultural\.
 - Fortalecer la educación ambiental, el cuidado de la naturaleza y la participación responsable en la comunidad\.
 - Construir vínculos de confianza y cooperación con las familias\.
 - Promover el trabajo colaborativo y la formación permanente de los equipos educativos\.
+- Optimizar los tiempos escolares, eliminando los tiempos inertes\.
+- Implementación de desafíos de aprendizajes vinculados con la oralidad, lectura y escritura y el abordaje y resolución de situaciones problemáticas desde todos los campos y espacios curriculares\.
+- Incluir temáticas vinculadas con la educación para el desarrollo sostenible (educación ambiental, educación sexual integral, convivencia, entre otras)\.
+- Uso efectivo de las TIC (tecnología de la información y la comunicación) y las TAC (tecnología de aprendizaje y conocimiento) de acuerdo con los objetivos de enseñanza (propósitos) y aprendizajes, contenidos y desarrollo de capacidades propuestos para cada uno de los campos y espacios curriculares\.
 
 ## Nuestra propuesta pedagógica
 
