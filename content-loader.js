@@ -65,31 +65,156 @@
     contenedor.replaceChildren(...items.map(crearTarjetaFoto));
   }
 
+  let visor = null;
+
+  function abrirVisor(fotos, indice, alt) {
+    if (!visor) {
+      const caja = document.createElement('div');
+      caja.className = 'visor';
+      caja.hidden = true;
+      caja.setAttribute('role', 'dialog');
+      caja.setAttribute('aria-modal', 'true');
+      caja.setAttribute('aria-label', 'Foto ampliada');
+      const imagen = document.createElement('img');
+      const cerrar = document.createElement('button');
+      cerrar.type = 'button';
+      cerrar.className = 'visor-cerrar';
+      cerrar.setAttribute('aria-label', 'Cerrar');
+      cerrar.textContent = '×';
+      const anterior = document.createElement('button');
+      anterior.type = 'button';
+      anterior.className = 'visor-nav visor-ant';
+      anterior.setAttribute('aria-label', 'Foto anterior');
+      anterior.textContent = '‹';
+      const siguiente = document.createElement('button');
+      siguiente.type = 'button';
+      siguiente.className = 'visor-nav visor-sig';
+      siguiente.setAttribute('aria-label', 'Foto siguiente');
+      siguiente.textContent = '›';
+      caja.append(imagen, cerrar, anterior, siguiente);
+      document.body.append(caja);
+      visor = { caja, imagen, anterior, siguiente, fotos: [], indice: 0 };
+      const mostrar = (i) => {
+        visor.indice = (i + visor.fotos.length) % visor.fotos.length;
+        visor.imagen.src = visor.fotos[visor.indice];
+        const varias = visor.fotos.length > 1;
+        visor.anterior.hidden = !varias;
+        visor.siguiente.hidden = !varias;
+      };
+      visor.mostrar = mostrar;
+      const cierre = () => { caja.hidden = true; document.body.style.overflow = ''; };
+      cerrar.addEventListener('click', cierre);
+      caja.addEventListener('click', (e) => { if (e.target === caja) cierre(); });
+      anterior.addEventListener('click', () => mostrar(visor.indice - 1));
+      siguiente.addEventListener('click', () => mostrar(visor.indice + 1));
+      document.addEventListener('keydown', (e) => {
+        if (caja.hidden) return;
+        if (e.key === 'Escape') cierre();
+        if (e.key === 'ArrowLeft') mostrar(visor.indice - 1);
+        if (e.key === 'ArrowRight') mostrar(visor.indice + 1);
+      });
+    }
+    visor.fotos = fotos;
+    visor.imagen.alt = alt || '';
+    visor.mostrar(indice);
+    visor.caja.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function crearNovedad(novedad, indice) {
+    let fotos = Array.isArray(novedad.fotos) ? novedad.fotos.filter(Boolean) : [];
+    if (!fotos.length && novedad.foto) fotos = [novedad.foto];
+    const alt = novedad.titulo || 'Foto de la novedad';
+
+    const nota = document.createElement('article');
+    nota.className = 'novedad';
+
+    let texto = null;
+    if (novedad.titulo || novedad.texto || novedad.fecha) {
+      texto = document.createElement('div');
+      texto.className = 'bloque-texto';
+      if (novedad.fecha) {
+        const fecha = document.createElement('span');
+        fecha.className = 'novedad-fecha';
+        fecha.textContent = novedad.fecha;
+        texto.append(fecha);
+      }
+      if (novedad.titulo) {
+        const titulo = document.createElement('h3');
+        titulo.textContent = novedad.titulo;
+        texto.append(titulo);
+      }
+      if (novedad.texto) {
+        const parrafo = document.createElement('p');
+        parrafo.textContent = novedad.texto;
+        texto.append(parrafo);
+      }
+    }
+
+    const miniatura = (src, i) => {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'novedad-foto';
+      boton.setAttribute('aria-label', `Ver foto ${i + 1} de ${fotos.length} en grande`);
+      const imagen = document.createElement('img');
+      imagen.src = src;
+      imagen.alt = fotos.length > 1 ? `${alt} (${i + 1})` : alt;
+      imagen.loading = 'lazy';
+      boton.append(imagen);
+      boton.addEventListener('click', () => abrirVisor(fotos, i, alt));
+      return boton;
+    };
+
+    if (fotos.length === 1) {
+      nota.classList.add('novedad-una');
+      if (indice % 2) nota.classList.add('invertido');
+      const marco = document.createElement('div');
+      marco.className = 'foto-marco';
+      const foto = document.createElement('div');
+      foto.className = 'foto';
+      foto.append(miniatura(fotos[0], 0));
+      marco.append(foto);
+      if (novedad.pie) {
+        const pie = document.createElement('span');
+        pie.className = 'foto-pie';
+        pie.textContent = novedad.pie;
+        marco.append(pie);
+      }
+      if (texto) nota.append(marco, texto);
+      else { nota.classList.add('solo-fotos'); nota.append(marco); }
+    } else if (fotos.length > 1) {
+      nota.classList.add('novedad-multi');
+      if (texto) nota.append(texto);
+      const grilla = document.createElement('div');
+      grilla.className = 'novedad-grilla';
+      grilla.dataset.cantidad = String(fotos.length);
+      grilla.append(...fotos.map(miniatura));
+      nota.append(grilla);
+      if (novedad.pie) {
+        const pie = document.createElement('span');
+        pie.className = 'foto-pie';
+        pie.textContent = novedad.pie;
+        nota.append(pie);
+      }
+    } else if (texto) {
+      nota.classList.add('solo-texto');
+      nota.append(texto);
+    }
+    return nota;
+  }
+
   function renderizarNovedades(datos) {
     const seccion = document.getElementById('novedades');
     const contenedor = document.getElementById('novedades-lista');
     if (!seccion || !contenedor) return;
-    const items = ((datos.novedades && datos.novedades.items) || []).filter((n) => n.titulo || n.texto || n.foto);
+    const items = ((datos.novedades && datos.novedades.items) || [])
+      .filter((n) => n.titulo || n.texto || n.foto || (Array.isArray(n.fotos) && n.fotos.length));
     seccion.hidden = items.length === 0;
     const enlace = document.getElementById('nav-novedades');
     if (enlace) enlace.parentElement.hidden = items.length === 0;
     const separador = seccion.nextElementSibling;
     if (separador && separador.classList.contains('separador')) separador.hidden = items.length === 0;
-    contenedor.replaceChildren(...items.map((novedad, indice) => {
-      const tarjeta = crearTarjetaFoto(novedad, indice);
-      if (novedad.fecha) {
-        const fecha = document.createElement('span');
-        fecha.className = 'novedad-fecha';
-        fecha.textContent = novedad.fecha;
-        const textoBloque = tarjeta.querySelector('.bloque-texto');
-        textoBloque.prepend(fecha, document.createElement('br'));
-      }
-      if (!novedad.foto) {
-        tarjeta.style.gridTemplateColumns = '1fr';
-        tarjeta.querySelector('.foto-marco').remove();
-      }
-      return tarjeta;
-    }));
+    contenedor.replaceChildren(...items.map(crearNovedad));
   }
 
   function renderizarFamilias(items) {

@@ -25,6 +25,32 @@
 
       * { box-sizing: border-box; }
 
+      .galeria-fotos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .galeria-celda {
+        background: #fff;
+        border: 1px solid var(--linea);
+        border-radius: 14px;
+        padding: 8px;
+      }
+      .galeria-celda img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+      .galeria-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
       body {
         min-height: 100vh;
         margin: 0;

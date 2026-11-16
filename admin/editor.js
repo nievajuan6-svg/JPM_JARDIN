@@ -26,6 +26,7 @@
     navInicio: 'Enlace: Inicio',
     navNovedades: 'Enlace: Novedades',
     novedadesTitulo: 'Título de la sección',
+    fotos: 'Fotos',
     fecha: 'Fecha (opcional, por ejemplo: 12 de noviembre)',
     navJardin: 'Enlace: El jardín',
     navProyectos: 'Enlace: Proyectos',
@@ -326,6 +327,105 @@
     return wrapper;
   }
 
+  function createPhotoGallery(list, path) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'campo';
+    const label = document.createElement('span');
+    label.className = 'campo-label';
+    label.textContent = 'Fotos (una o varias)';
+    wrapper.append(label);
+
+    const grid = document.createElement('div');
+    grid.className = 'galeria-fotos';
+    list.forEach((src, index) => {
+      const cell = document.createElement('div');
+      cell.className = 'galeria-celda';
+      const image = document.createElement('img');
+      image.src = src.startsWith('/') ? src : `/${src}`;
+      image.alt = `Foto ${index + 1}`;
+      image.loading = 'lazy';
+      const actions = document.createElement('div');
+      actions.className = 'galeria-acciones';
+      const move = (from, to) => {
+        const [item] = list.splice(from, 1);
+        list.splice(to, 0, item);
+        renderSelectedTab();
+        setDirty();
+      };
+      if (index > 0) {
+        const left = document.createElement('button');
+        left.type = 'button';
+        left.className = 'boton boton-secundario boton-mini';
+        left.textContent = '←';
+        left.setAttribute('aria-label', `Mover la foto ${index + 1} hacia adelante`);
+        left.addEventListener('click', () => move(index, index - 1));
+        actions.append(left);
+      }
+      if (index < list.length - 1) {
+        const right = document.createElement('button');
+        right.type = 'button';
+        right.className = 'boton boton-secundario boton-mini';
+        right.textContent = '→';
+        right.setAttribute('aria-label', `Mover la foto ${index + 1} hacia atrás`);
+        right.addEventListener('click', () => move(index, index + 1));
+        actions.append(right);
+      }
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'boton boton-secundario boton-peligro boton-mini';
+      remove.textContent = 'Quitar';
+      remove.setAttribute('aria-label', `Quitar la foto ${index + 1}`);
+      remove.addEventListener('click', () => {
+        list.splice(index, 1);
+        renderSelectedTab();
+        setDirty('Se quitó la foto. Guardá para publicar el cambio.');
+      });
+      actions.append(remove);
+      cell.append(image, actions);
+      grid.append(cell);
+    });
+    if (list.length) wrapper.append(grid);
+
+    const fileLabel = document.createElement('label');
+    fileLabel.className = 'boton boton-secundario seleccionar-foto';
+    fileLabel.textContent = list.length ? '+ Agregar más fotos' : '+ Agregar fotos';
+    const input = document.createElement('input');
+    input.className = 'foto-archivo';
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.multiple = true;
+    input.setAttribute('aria-label', 'Agregar fotos');
+    fileLabel.append(input);
+    wrapper.append(fileLabel);
+
+    const help = document.createElement('p');
+    help.className = 'ayuda';
+    help.textContent = 'Podés elegir varias fotos a la vez desde tu galería. Se suben solas, en el orden en que las elijas. Si hay una sola se muestra con el texto al costado; si hay varias, en una grilla.';
+    wrapper.append(help);
+
+    input.addEventListener('change', async () => {
+      const files = [...(input.files || [])];
+      if (!files.length) return;
+      input.disabled = true;
+      let done = 0;
+      try {
+        for (const file of files) {
+          showStatus(`Subiendo foto ${done + 1} de ${files.length}… no cierres la página.`);
+          list.push(await uploadImage(file));
+          done += 1;
+        }
+        renderSelectedTab();
+        setDirty(`${done === 1 ? 'Foto subida' : `${done} fotos subidas`}. Guardá los cambios para que aparezcan en la web.`);
+      } catch (error) {
+        if (done) renderSelectedTab();
+        showStatus(`${error.message}${done ? ` (se subieron ${done} de ${files.length}; guardá y probá con el resto)` : ''}`, 'error');
+        if (done) { saveBar.hidden = false; state.dirtyJson = true; }
+        input.disabled = false;
+      }
+    });
+    return wrapper;
+  }
+
   async function imageAsWebp(file) {
     if (!('createImageBitmap' in window)) {
       return { blob: file, extension: file.name.split('.').pop()?.toLowerCase() || 'img' };
@@ -410,7 +510,7 @@
   function makeEmptyItem(path) {
     const location = path.join('.');
     if (location === 'galeria') return { img: '', alt: '', pie: '' };
-    if (location === 'novedades.items') return { titulo: '', fecha: '', texto: '', foto: '', fotoAlt: '', pie: '' };
+    if (location === 'novedades.items') return { titulo: '', fecha: '', texto: '', fotos: [], pie: '' };
     if (location === 'jardin.bloques') return { titulo: '', texto: '', foto: '', fotoAlt: '', pie: '' };
     if (location === 'proyectos.items') return { titulo: '', desc: '', img: '', alt: '', pie: '' };
     if (location === 'familias.items') return { texto: '', firma: '' };
@@ -510,7 +610,11 @@
 
       if (item && typeof item === 'object' && !Array.isArray(item)) {
         Object.entries(item).forEach(([childKey, childValue]) => {
-          card.append(createScalarField(childKey, childValue, [...path, index, childKey]));
+          if (childKey === 'fotos' && Array.isArray(childValue)) {
+            card.append(createPhotoGallery(childValue, [...path, index, childKey]));
+          } else {
+            card.append(createScalarField(childKey, childValue, [...path, index, childKey]));
+          }
         });
       } else {
         card.append(createScalarField(key, item, [...path, index]));

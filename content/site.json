@@ -41,8 +41,7 @@
         "titulo": "Primera novedad",
         "fecha": "",
         "texto": "Acá van a aparecer las novedades del jardín: actividades, salidas, fiestas y avisos para las familias.",
-        "foto": "",
-        "fotoAlt": "",
+        "fotos": [],
         "pie": ""
       }
     ]
