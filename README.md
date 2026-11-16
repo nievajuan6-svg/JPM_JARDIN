@@ -10,17 +10,12 @@ Static HTML/CSS/JS, sin build. El contenido editable se guarda en `content/site.
 
 ## Panel de administración
 
-El acceso y el editor propio del jardín están en `/admin/`. La pantalla permite ingresar con una cuenta invitada y editar el contenido del sitio con una interfaz personalizada, sin abrir Decap ni el dashboard de Netlify. Netlify Identity autentica a las personas autorizadas y Git Gateway guarda los cambios en el repositorio.
+`/admin/` pide **usuario y contraseña** (pocas cuentas, definidas por el administrador; sin mails ni registro). Al guardar, el navegador llama a la función `netlify/functions/git.mjs`, que escribe en GitHub (`content/site.json`, `Jardín-informacion.md`, `images/uploads/`) y Netlify republica el sitio en 1-2 minutos. Ya no se usa Netlify Identity ni Git Gateway.
 
-Una vez conectado el repositorio con Netlify:
+Configuración (una sola vez), en Netlify → Project configuration → Environment variables:
 
-1. En el panel de Netlify, habilitar **Identity** para el sitio.
-2. En Identity, configurar el registro como **Invite only** e invitar a las personas autorizadas.
-3. Habilitar **Git Gateway** en los servicios de Identity.
-4. Esperar a que Netlify publique la versión que contiene `admin/`, y abrir `https://jpmjardin.netlify.app/admin/`.
+- `EDITORS`: usuarios del panel, formato `nombre:clave,nombre2:clave2` (ej. `maria:Sol2026,ana:Luna2026`). Cada guardado queda en GitHub con `(por nombre)`.
+- `GITHUB_TOKEN`: token *fine-grained* de GitHub (Settings → Developer settings → Personal access tokens), solo para el repo `JPM_JARDIN`, permiso **Contents: Read and write**.
+- `GITHUB_REPO` (opcional): por defecto `nievajuan6-svg/JPM_JARDIN`.
 
-En `/admin/`, ingresá con tu cuenta invitada y elegí **Editar la portada** o **Editar información**. El editor permite actualizar textos, títulos, datos de contacto y horarios; subir o reemplazar fotos; y agregar, quitar o reordenar proyectos, bloques y fotos del carrusel. Las imágenes se guardan en `images/uploads/` y se optimizan a WebP. La información institucional se edita en un área visual con formato de títulos, párrafos, negrita, cursiva y listas. Los cambios se guardan en `content/site.json` o `Jardín-informacion.md` y Netlify publica la nueva versión.
-
-Los cambios se guardan como commits en `main` y Netlify vuelve a publicar el sitio. Al quitar una foto de una lista se borra su referencia del contenido; el archivo de imagen puede seguir guardado en el repositorio, aunque deja de mostrarse en la web. No habilitar el registro público de cuentas.
-
-Para previsualizar localmente el sitio y la pantalla personalizada del panel, ejecutar `python -m http.server 8000` desde la carpeta del proyecto y abrir `http://localhost:8000/` o `http://localhost:8000/admin/`. El acceso y el guardado real requieren la configuración de Netlify descrita arriba y publicar los cambios; el servidor local por sí solo solo muestra el panel.
+Después de cargarlas hay que volver a publicar (Deploys → Trigger deploy). Para agregar o cambiar personas: editar `EDITORS` y re-publicar. Probar localmente con `netlify dev` (CLI de Netlify).

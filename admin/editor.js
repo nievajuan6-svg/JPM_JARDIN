@@ -1,5 +1,7 @@
 (() => {
-  const GATEWAY = '/.netlify/git/github/contents/';
+  const GATEWAY = '/.netlify/functions/git';
+  const PASS_KEY = 'jardin-panel-clave';
+  const USER_KEY = 'jardin-panel-usuario';
   const BRANCH = 'main';
   const JSON_PATH = 'content/site.json';
   const INFO_PATH = 'Jardín-informacion.md';
@@ -85,11 +87,11 @@
   const saveBar = document.getElementById('barra-guardado');
   const saveButton = document.getElementById('guardar');
   const markdownEditor = document.getElementById('markdown');
-  const identity = window.netlifyIdentity;
   const requestedSection = new URLSearchParams(location.search).get('section');
   const state = {
     user: null,
-    token: null,
+    password: '',
+    username: '',
     json: null,
     jsonSha: null,
     markdown: '',
@@ -109,14 +111,13 @@
     app.hidden = true;
     access.hidden = false;
     accessText.textContent = message;
-    document.getElementById('ingresar').hidden = !identity;
   }
 
   function showEditor() {
     access.hidden = true;
     app.hidden = false;
     document.getElementById('salir').hidden = false;
-    document.getElementById('usuario').textContent = state.user?.email || '';
+    
   }
 
   function setDirty(message = 'Tenés cambios sin guardar.') {
@@ -142,13 +143,12 @@
   }
 
   async function requestGit(path, options = {}) {
-    if (!state.user) throw new Error('La sesión venció. Volvé a ingresar al panel.');
-    const token = await state.user.jwt();
-    const response = await fetch(`${GATEWAY}${encodePath(path)}${options.query || ''}`, {
+    if (!state.password) throw new Error('La sesión venció. Volvé a ingresar al panel.');
+    const response = await fetch(`${GATEWAY}?path=${encodeURIComponent(path)}`, {
       method: options.method || 'GET',
       headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
+        'x-panel-user': encodeURIComponent(state.username),
+        'x-panel-password': state.password,
         ...(options.body ? { 'Content-Type': 'application/json' } : {}),
       },
       ...(options.body ? { body: JSON.stringify(options.body) } : {}),
@@ -163,13 +163,20 @@
     }
     if (!response.ok) {
       const detail = typeof result.message === 'string' ? result.message : response.statusText;
+      if (response.status === 401 && /(contrase|usuario)/i.test(detail)) {
+        localStorage.removeItem(PASS_KEY);
+        state.username = '';
+        state.password = '';
+        showAccess('El usuario o la contraseña no son correctos. Probá de nuevo.');
+        throw new Error('Contraseña incorrecta.');
+      }
+      if (response.status === 500 && /configurar/i.test(detail)) {
+        throw new Error('El guardado todavía no está configurado en Netlify (faltan las variables EDITORS y GITHUB_TOKEN).');
+      }
       if (response.status === 401 || response.status === 403) {
-        throw new Error('No se pudo autorizar el guardado. Revisá que Git Gateway esté habilitado y que tu cuenta tenga permiso.');
+        throw new Error('GitHub no aceptó el permiso del sitio. Hay que renovar el token en Netlify.');
       }
       if (response.status === 404) {
-        if (/site configuration|git gateway/i.test(detail)) {
-          throw new Error('Git Gateway no está habilitado para este sitio. Activá el servicio Git Gateway en Netlify y volvé a probar.');
-        }
         throw new Error(`No se encontró “${path}” en el repositorio.`);
       }
       throw new Error(`No se pudo guardar “${path}” (HTTP ${response.status}): ${detail}`);
@@ -635,7 +642,6 @@
     markdownEditor.innerHTML = DOMPurify.sanitize(marked.parse(state.markdown));
     renderSelectedTab();
     document.getElementById('salir').hidden = false;
-    document.getElementById('usuario').textContent = state.user.email || '';
     setClean('Contenido cargado. Cuando termines, guardá los cambios para publicarlos.');
   }
 
@@ -651,39 +657,45 @@
     });
   });
 
-  document.getElementById('ingresar').addEventListener('click', () => {
-    if (identity) identity.open('login');
-  });
-  document.getElementById('salir').addEventListener('click', () => identity?.logout());
-
-  if (!identity) {
-    showAccess('No se pudo conectar con el acceso. Verificá que Netlify Identity esté habilitado.');
-    return;
-  }
-
+  const userInput = document.getElementById('usuario-login');
+  const passInput = document.getElementById('clave');
+  const loginForm = document.getElementById('form-acceso');
   let loaded = false;
-  async function onIdentity(user) {
-    state.user = user || null;
-    if (!user) {
-      loaded = false;
-      document.getElementById('salir').hidden = true;
-      showAccess('Iniciá sesión con la cuenta invitada para editar los contenidos del jardín.');
-      return;
-    }
 
+  async function start(username, password) {
+    state.username = username;
+    state.password = password;
     showEditor();
     if (loaded) return;
     loaded = true;
     try {
       await loadContents();
+      try { localStorage.setItem(PASS_KEY, password); localStorage.setItem(USER_KEY, username); } catch {}
     } catch (error) {
       loaded = false;
-      showStatus(error.message, 'error');
+      if (state.password) showStatus(error.message, 'error');
     }
   }
 
-  identity.on('init', onIdentity);
-  identity.on('login', onIdentity);
-  identity.on('logout', () => onIdentity(null));
-  identity.on('error', () => showStatus('No se pudo completar el acceso. Revisá tu invitación o intentá ingresar otra vez.', 'error'));
+  function logout() {
+    try { localStorage.removeItem(PASS_KEY); } catch {}
+    state.password = '';
+    loaded = false;
+    document.getElementById('salir').hidden = true;
+    showAccess('Escribí tu usuario y contraseña para editar los contenidos.');
+  }
+
+  loginForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = userInput.value.trim();
+    const value = passInput.value.trim();
+    if (name && value) start(name, value);
+  });
+  document.getElementById('salir').addEventListener('click', logout);
+
+  let saved = '';
+  let savedUser = '';
+  try { saved = localStorage.getItem(PASS_KEY) || ''; savedUser = localStorage.getItem(USER_KEY) || ''; } catch {}
+  if (saved && savedUser) start(savedUser, saved);
+  else showAccess('Escribí tu usuario y contraseña para editar los contenidos.');
 })();

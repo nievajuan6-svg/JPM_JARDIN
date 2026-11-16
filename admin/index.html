@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
       :root {
         color-scheme: light;
@@ -274,16 +273,8 @@
       </div>
 
       <section class="tarjeta estado" id="acceso" aria-live="polite">
-        <div id="sin-sesion">
-          <h2>Ingresar al panel</h2>
-          <p>Usá el correo que recibió la invitación para acceder. Una vez dentro, vas a poder elegir qué parte del sitio editar.</p>
-          <button class="boton boton-principal" id="ingresar" type="button">Ingresar con mi cuenta</button>
-          <p class="mensaje" id="mensaje" role="status">Conectando con el acceso seguro del jardín…</p>
-        </div>
-
-        <div id="con-sesion" hidden>
-          <h2>¡Hola! Ya estás en el panel</h2>
-          <p class="usuario" id="usuario"></p>
+        <div id="con-sesion">
+          <h2>¡Hola! ¿Qué querés editar?</h2>
           <div class="opciones">
             <article class="opcion">
               <span class="opcion-icono" aria-hidden="true">✿</span>
@@ -298,54 +289,11 @@
               <a class="boton" href="editor.html?section=informacion">Editar información</a>
             </article>
           </div>
-          <button class="boton" id="salir" type="button" style="margin-top: 22px">Salir</button>
         </div>
       </section>
 
-      <p class="pie">El acceso está reservado a las personas invitadas por el jardín. Los cambios se guardan en el sitio al publicarlos.</p>
+      <p class="pie">Al entrar al editor se pide tu usuario y contraseña. Los cambios se publican solos en un par de minutos.</p>
     </main>
 
-    <script>
-      const identidad = window.netlifyIdentity;
-      const sinSesion = document.getElementById('sin-sesion');
-      const conSesion = document.getElementById('con-sesion');
-      const mensaje = document.getElementById('mensaje');
-      const usuario = document.getElementById('usuario');
-
-      function mostrarSesion(user) {
-        const autenticado = Boolean(user);
-        sinSesion.hidden = autenticado;
-        conSesion.hidden = !autenticado;
-        if (autenticado) {
-          usuario.textContent = user.email || 'Sesión iniciada';
-          mensaje.textContent = '';
-        } else if (identidad) {
-          mensaje.textContent = 'Iniciá sesión con el correo que recibió la invitación.';
-        }
-      }
-
-      document.getElementById('ingresar').addEventListener('click', () => {
-        if (identidad) {
-          identidad.open('login');
-        } else {
-          mensaje.textContent = 'No se pudo conectar con el acceso. Verificá que Netlify Identity esté habilitado en el sitio.';
-        }
-      });
-
-      document.getElementById('salir').addEventListener('click', () => {
-        if (identidad) identidad.logout();
-      });
-
-      if (identidad) {
-        identidad.on('init', mostrarSesion);
-        identidad.on('login', mostrarSesion);
-        identidad.on('logout', () => mostrarSesion(null));
-        identidad.on('error', () => {
-          mensaje.textContent = 'No se pudo iniciar sesión. Revisá que la cuenta esté invitada y activada.';
-        });
-      } else {
-        mensaje.textContent = 'No se pudo conectar con el acceso. Verificá que Netlify Identity esté habilitado en el sitio.';
-      }
-    </script>
   </body>
 </html>

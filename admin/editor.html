@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
     <style>
@@ -349,8 +348,12 @@
 
     <section class="estado-acceso" id="acceso">
       <h1 id="acceso-titulo">Acceso al editor</h1>
-      <p id="acceso-texto">Iniciá sesión con la cuenta invitada para editar el sitio.</p>
-      <button class="boton boton-principal" id="ingresar" type="button">Ingresar con mi cuenta</button>
+      <p id="acceso-texto">Ingresá con tu usuario y contraseña para editar el sitio.</p>
+      <form id="form-acceso">
+        <input id="usuario-login" type="text" autocomplete="username" placeholder="Usuario" aria-label="Usuario" required style="font:inherit;padding:12px 16px;border:2px solid rgba(45,90,39,.25);border-radius:14px;min-width:240px;margin:0 8px 10px 0"><br>
+        <input id="clave" type="password" autocomplete="current-password" placeholder="Contraseña" aria-label="Contraseña" required style="font:inherit;padding:12px 16px;border:2px solid rgba(45,90,39,.25);border-radius:14px;min-width:240px;margin:0 8px 10px 0">
+        <button class="boton boton-principal" type="submit">Entrar</button>
+      </form>
       <p><a href="/admin/">Volver al panel</a></p>
     </section>
 
