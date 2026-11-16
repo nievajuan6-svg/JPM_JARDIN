@@ -6,11 +6,13 @@
     "marca": "J.P. Manso",
     "marcaSubtitulo": "Jardín de Infantes",
     "navInicio": "Inicio",
+    "navNovedades": "Novedades",
     "navJardin": "El jardín",
     "navProyectos": "Proyectos",
     "navFamilias": "Familias",
     "navInformacion": "Información",
     "navInscripciones": "Inscripciones",
+    "novedadesTitulo": "Novedades",
     "jardinTitulo": "El jardín",
     "proyectosTitulo": "Proyectos",
     "familiasTitulo": "Familias",
@@ -31,6 +33,19 @@
     "ubicacion": "Las Ensenadas · Unquillo · Córdoba",
     "foto": "images/webp/hero.webp",
     "fotoAlt": "El patio del jardín con su huerta y sus juegos"
+  },
+  "novedades": {
+    "introduccion": "Lo que está pasando en el jardín.",
+    "items": [
+      {
+        "titulo": "Primera novedad",
+        "fecha": "",
+        "texto": "Acá van a aparecer las novedades del jardín: actividades, salidas, fiestas y avisos para las familias.",
+        "foto": "",
+        "fotoAlt": "",
+        "pie": ""
+      }
+    ]
   },
   "jardin": {
     "introduccion": "Una institución educativa que acompaña a niños y niñas durante la primera infancia. ",

@@ -452,6 +452,8 @@
 
     /* ---------- Trazos de pincel ---------- */
 
+    .separador[hidden] { display: none; }
+
     .separador {
       display: flex;
       justify-content: center;
@@ -585,7 +587,15 @@
       margin-bottom: 8px;
     }
 
-    .bloque-texto p { margin: 0; }
+    .bloque-texto p { margin: 0; white-space: pre-line; }
+
+    .novedad-fecha {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--color-terracota, #c86d51);
+    }
 
     /* ---------- Testimonios de familias ---------- */
 
@@ -1263,6 +1273,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#inicio" data-site-text="textos.navInicio">Inicio</a></li>
+        <li><a href="#novedades" data-site-text="textos.navNovedades" id="nav-novedades">Novedades</a></li>
         <li><a href="#jardin" data-site-text="textos.navJardin">El jardín</a></li>
         <li><a href="#proyectos" data-site-text="textos.navProyectos">Proyectos</a></li>
         <li><a href="#testimonios" data-site-text="textos.navFamilias">Familias</a></li>
@@ -1298,6 +1309,26 @@
         <p class="hero-inscripciones" data-site-text="inicio.lema">Sembramos palabras, cosechamos aprendizajes</p>
         <p class="hero-lugar" data-site-text="inicio.ubicacion">Las Ensenadas · Unquillo · Córdoba</p>
       </div>
+    </section>
+
+    <div class="separador" aria-hidden="true">
+      <svg class="trazo" viewBox="0 0 440 32" fill="none">
+        <path d="M8 20 C52 10 84 26 130 17 C176 8 208 24 254 16 C300 8 332 22 378 15 C384 13.5 388 16 391 19" stroke="#8FBC8F" stroke-width="3.5" stroke-linecap="round"/>
+        <path class="onda-2" d="M14 26 C60 18 90 31 138 24 C186 17 216 30 264 23" stroke="#C86D51" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        <path class="hoja" d="M391 19 C391 12 395 7 403 3 C405 11 401 17 391 19 Z" stroke="#2D5A27" stroke-width="1.8"/>
+        <path class="hoja" d="M391 19 C394 15 399 9 403 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="seccion" id="novedades" style="max-width: 1120px;">
+      <h2 class="seccion-titulo reveal" data-site-text="textos.novedadesTitulo">Novedades</h2>
+      <svg class="garabato trazo reveal" width="140" height="24" viewBox="0 0 140 24" fill="none" aria-hidden="true">
+        <path d="M4 15 C20 9 30 18 46 14 C62 10 72 18 88 13 C100 9 110 14 118 12" stroke="#C86D51" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M122 17 C125 13 129 8 132 3" stroke="#2D5A27" stroke-width="1.4" stroke-linecap="round"/>
+        <path class="hoja" d="M122 17 C122 11 125 7 132 3 C134 10 130 16 122 17 Z" stroke="#2D5A27" stroke-width="1.6"/>
+      </svg>
+      <p class="intro reveal" data-site-text="novedades.introduccion"></p>
+      <div id="novedades-lista"></div>
     </section>
 
     <div class="separador" aria-hidden="true">

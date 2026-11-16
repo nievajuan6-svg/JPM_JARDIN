@@ -65,6 +65,33 @@
     contenedor.replaceChildren(...items.map(crearTarjetaFoto));
   }
 
+  function renderizarNovedades(datos) {
+    const seccion = document.getElementById('novedades');
+    const contenedor = document.getElementById('novedades-lista');
+    if (!seccion || !contenedor) return;
+    const items = ((datos.novedades && datos.novedades.items) || []).filter((n) => n.titulo || n.texto || n.foto);
+    seccion.hidden = items.length === 0;
+    const enlace = document.getElementById('nav-novedades');
+    if (enlace) enlace.parentElement.hidden = items.length === 0;
+    const separador = seccion.nextElementSibling;
+    if (separador && separador.classList.contains('separador')) separador.hidden = items.length === 0;
+    contenedor.replaceChildren(...items.map((novedad, indice) => {
+      const tarjeta = crearTarjetaFoto(novedad, indice);
+      if (novedad.fecha) {
+        const fecha = document.createElement('span');
+        fecha.className = 'novedad-fecha';
+        fecha.textContent = novedad.fecha;
+        const textoBloque = tarjeta.querySelector('.bloque-texto');
+        textoBloque.prepend(fecha, document.createElement('br'));
+      }
+      if (!novedad.foto) {
+        tarjeta.style.gridTemplateColumns = '1fr';
+        tarjeta.querySelector('.foto-marco').remove();
+      }
+      return tarjeta;
+    }));
+  }
+
   function renderizarFamilias(items) {
     const contenedor = document.getElementById('testimonios-lista');
     if (!contenedor) return;
@@ -126,6 +153,7 @@
       if (typeof alt === 'string') elemento.alt = alt;
     });
 
+    ponerTexto('#novedades .intro', datos.novedades && datos.novedades.introduccion);
     ponerTexto('#proyectos .intro', datos.proyectos.introduccion);
     ponerTexto('#testimonios .intro', datos.familias.introduccion);
     ponerTexto('#contacto .intro', datos.contacto.introduccion);
@@ -161,6 +189,7 @@
 
     ponerTexto('#proyecto-titulo', datos.proyectos.items[0] ? datos.proyectos.items[0].titulo : 'No hay proyectos publicados');
     renderizarBloques(datos.jardin.bloques);
+    renderizarNovedades(datos);
     renderizarFamilias(datos.familias.items);
     renderizarReferencias(datos.referencias.items);
 

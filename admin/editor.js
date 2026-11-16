@@ -8,6 +8,7 @@
   const DATA_LABELS = {
     textos: 'Textos del sitio y navegación',
     inicio: 'Portada principal',
+    novedades: 'Novedades',
     jardin: 'El jardín',
     proyectos: 'Proyectos',
     familias: 'Familias',
@@ -23,6 +24,9 @@
     marca: 'Nombre corto del menú',
     marcaSubtitulo: 'Subtítulo del menú',
     navInicio: 'Enlace: Inicio',
+    navNovedades: 'Enlace: Novedades',
+    novedadesTitulo: 'Título de la sección',
+    fecha: 'Fecha (opcional, por ejemplo: 12 de noviembre)',
     navJardin: 'Enlace: El jardín',
     navProyectos: 'Enlace: Proyectos',
     navFamilias: 'Enlace: Familias',
@@ -232,6 +236,7 @@
   function listLabel(path, key) {
     const parent = path.slice(0, -1).join('.');
     if (key === 'galeria') return 'Fotos del carrusel';
+    if (parent === 'novedades') return 'Novedades (la última va primero)';
     if (parent === 'jardin') return 'Bloques con fotos y texto';
     if (parent === 'proyectos') return 'Proyectos';
     if (parent === 'familias') return 'Textos para Familias';
@@ -405,6 +410,7 @@
   function makeEmptyItem(path) {
     const location = path.join('.');
     if (location === 'galeria') return { img: '', alt: '', pie: '' };
+    if (location === 'novedades.items') return { titulo: '', fecha: '', texto: '', foto: '', fotoAlt: '', pie: '' };
     if (location === 'jardin.bloques') return { titulo: '', texto: '', foto: '', fotoAlt: '', pie: '' };
     if (location === 'proyectos.items') return { titulo: '', desc: '', img: '', alt: '', pie: '' };
     if (location === 'familias.items') return { texto: '', firma: '' };
@@ -517,7 +523,9 @@
     add.type = 'button';
     add.textContent = `+ Agregar ${listTitle.toLowerCase()}`;
     add.addEventListener('click', () => {
-      items.push(items.length ? emptyLike(items[0]) : makeEmptyItem(path));
+      const nuevo = items.length ? emptyLike(items[0]) : makeEmptyItem(path);
+      if (path.join('.') === 'novedades.items') items.unshift(nuevo);
+      else items.push(nuevo);
       renderSelectedTab();
       setDirty();
     });
