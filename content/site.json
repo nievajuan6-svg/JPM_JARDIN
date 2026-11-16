@@ -38,10 +38,13 @@
     "introduccion": "Lo que está pasando en el jardín.",
     "items": [
       {
-        "titulo": "Primera novedad",
-        "fecha": "",
-        "texto": "Acá van a aparecer las novedades del jardín: actividades, salidas, fiestas y avisos para las familias.",
-        "fotos": [],
+        "titulo": "Bosque de las Poesías",
+        "fecha": "Viernes 27 de Noviembre a las 9:30 hs.",
+        "texto": "¿Qué vamos a vivir en el bosque?\nSer protagonista de una experiencia inmersiva, compartida, donde la naturaleza, las palabras y el arte se encuentran. Una mañana para explorar, imaginar, crear y descubrir nuevos sentidos; donde cada encuentro nos invite a expresarnos y cada persona pueda dejar su huella.",
+        "fotos": [
+          "images/uploads/1794858674942-whatsapp-image-2026-11-16-at-11-43-04-am.webp",
+          "images/uploads/1794858672751-whatsapp-image-2026-11-16-at-11-43-04-am-1.webp"
+        ],
         "pie": ""
       }
     ]
