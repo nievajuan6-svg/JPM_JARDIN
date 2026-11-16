@@ -214,7 +214,33 @@
     if (enlace) enlace.parentElement.hidden = items.length === 0;
     const separador = seccion.nextElementSibling;
     if (separador && separador.classList.contains('separador')) separador.hidden = items.length === 0;
-    contenedor.replaceChildren(...items.map(crearNovedad));
+    const VISIBLES = 3;
+    const notas = items.map(crearNovedad);
+    const recientes = notas.slice(0, VISIBLES);
+    const anteriores = notas.slice(VISIBLES);
+    contenedor.replaceChildren(...recientes);
+    if (!anteriores.length) return;
+
+    const resto = document.createElement('div');
+    resto.id = 'novedades-anteriores';
+    resto.hidden = true;
+    resto.append(...anteriores);
+    const boton = document.createElement('button');
+    boton.type = 'button';
+    boton.className = 'btn-acuarela verde novedades-mas';
+    boton.setAttribute('aria-expanded', 'false');
+    boton.setAttribute('aria-controls', 'novedades-anteriores');
+    const textoCerrado = `Ver novedades anteriores (${anteriores.length})`;
+    boton.textContent = textoCerrado;
+    boton.addEventListener('click', () => {
+      resto.hidden = !resto.hidden;
+      boton.setAttribute('aria-expanded', String(!resto.hidden));
+      boton.textContent = resto.hidden ? textoCerrado : 'Ocultar novedades anteriores';
+    });
+    const caja = document.createElement('div');
+    caja.className = 'novedades-mas-caja';
+    caja.append(boton);
+    contenedor.append(caja, resto);
   }
 
   function renderizarFamilias(items) {
